@@ -1,0 +1,52 @@
+---
+// Reserves clearly ad-labeled space so ad content is never mistaken for
+// quiz options or site navigation (Section 9: AdSense placement policy).
+// Real ad units are wired up per-site once each site's own AdSense
+// property is approved — this renders the container + policy-required
+// "Advertisement" label either way.
+export interface Props {
+  slot: "category-index" | "category-page" | "results";
+  client?: string;
+}
+
+const { slot, client } = Astro.props;
+---
+
+<div class="ad-slot" data-ad-slot={slot}>
+  <p class="ad-slot__label muted">Advertisement</p>
+  <div class="ad-slot__unit">
+    {
+      client ? (
+        <ins
+          class="adsbygoogle"
+          style="display:block"
+          data-ad-client={client}
+          data-ad-slot={slot}
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        />
+      ) : (
+        <div class="ad-slot__placeholder muted">Ad space</div>
+      )
+    }
+  </div>
+</div>
+
+<style>
+  .ad-slot {
+    margin-block: 1.5rem;
+    text-align: center;
+  }
+  .ad-slot__label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0 0 0.35rem;
+  }
+  .ad-slot__placeholder {
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    font-size: 0.85rem;
+  }
+</style>

@@ -1,0 +1,31 @@
+{
+  "name": "@citizenship-tests/site-generator",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    "./layouts/BaseLayout.astro": "./src/layouts/BaseLayout.astro",
+    "./layouts/CategoryIndexLayout.astro": "./src/layouts/CategoryIndexLayout.astro",
+    "./layouts/CategoryPageLayout.astro": "./src/layouts/CategoryPageLayout.astro",
+    "./layouts/MockExamLayout.astro": "./src/layouts/MockExamLayout.astro",
+    "./layouts/ResultsLayout.astro": "./src/layouts/ResultsLayout.astro",
+    "./data": "./src/data/index.ts",
+    "./client/exam": "./src/client/exam.ts",
+    "./client/results": "./src/client/results.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "astro": "^5.0.0 || ^7.0.0"
+  },
+  "dependencies": {
+    "@citizenship-tests/quiz-engine": "workspace:*",
+    "@citizenship-tests/seo-utils": "workspace:*",
+    "@citizenship-tests/ui-components": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "@types/node": "^22.0.0"
+  }
+}

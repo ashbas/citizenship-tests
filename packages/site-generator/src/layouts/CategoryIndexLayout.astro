@@ -1,0 +1,37 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import CategoryNav from "@citizenship-tests/ui-components/CategoryNav.astro";
+import AdSlot from "@citizenship-tests/ui-components/AdSlot.astro";
+import { buildMeta } from "@citizenship-tests/seo-utils";
+import { withQuestionCounts } from "@citizenship-tests/quiz-engine";
+import type { SiteData } from "../data/index.js";
+
+export interface Props {
+  data: SiteData;
+}
+
+const { data } = Astro.props;
+const { config, questions, categories } = data;
+const categoriesWithCounts = withQuestionCounts(categories, questions);
+
+const meta = buildMeta({
+  siteName: config.siteName,
+  domain: config.domain,
+  path: "/categories",
+  pageTitle: "Study by Category",
+  description: `Browse every ${config.siteName} category, with ${questions.length} original practice questions and explanations across ${categories.length} topics.`,
+});
+---
+
+<BaseLayout siteName={config.siteName} disclaimer={config.disclaimer} meta={meta} currentPath="/categories">
+  <h1>Study by Category</h1>
+  <p class="muted">
+    {questions.length} practice questions across {categories.length} categories, each with a full explanation
+    and a link back to the official source material.
+  </p>
+  <CategoryNav categories={categoriesWithCounts} />
+  <AdSlot slot="category-index" />
+  <p>
+    Ready for the real thing? <a href="/mock-exam">Take a timed mock exam →</a>
+  </p>
+</BaseLayout>

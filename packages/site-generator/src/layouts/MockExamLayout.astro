@@ -1,0 +1,90 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import ProgressIndicator from "@citizenship-tests/ui-components/ProgressIndicator.astro";
+import { buildMeta, buildQuizSchema } from "@citizenship-tests/seo-utils";
+import type { SiteData } from "../data/index.js";
+
+export interface Props {
+  data: SiteData;
+}
+
+const { data } = Astro.props;
+const { config, questions } = data;
+const { testFormat, scoringRules } = config;
+
+const meta = buildMeta({
+  siteName: config.siteName,
+  domain: config.domain,
+  path: "/mock-exam",
+  pageTitle: "Mock Exam",
+  description: `Take a free, timed ${testFormat.questionsPerExam}-question mock exam modeled on the real ${config.siteName} test — ${testFormat.timeLimitMinutes} minutes, pass mark ${testFormat.passMarkPercent}%.`,
+});
+
+const structuredData = buildQuizSchema({
+  name: `${config.siteName} — Mock Exam`,
+  description: meta.description,
+  url: meta.canonicalUrl,
+  questionCount: testFormat.questionsPerExam,
+});
+
+// Only the fields the client controller needs travel to the browser.
+const clientPayload = {
+  questions,
+  testFormat,
+  scoringRules,
+};
+---
+
+<BaseLayout
+  siteName={config.siteName}
+  disclaimer={config.disclaimer}
+  meta={meta}
+  currentPath="/mock-exam"
+  structuredData={structuredData}
+>
+  <section data-exam-intro>
+    <h1>Mock Exam</h1>
+    <ul>
+      <li>{testFormat.questionsPerExam} questions, randomly drawn from the full question bank</li>
+      <li>{testFormat.timeLimitMinutes} minute time limit</li>
+      <li>Pass mark: {testFormat.passMarkPercent}% ({testFormat.passMarkCorrectCount} correct)</li>
+      {
+        scoringRules.type === "mustPassSubset" && (
+          <li>
+            You must also answer all {scoringRules.subsetTotalCount} "{scoringRules.subsetCategorySlug}"
+            questions correctly, regardless of your overall score.
+          </li>
+        )
+      }
+    </ul>
+    <p class="muted">
+      This is an untimed-friendly practice run of the real exam format. Nothing is saved or sent anywhere —
+      your answers stay in this browser tab.
+    </p>
+    <button type="button" class="btn" data-exam-start>Start Exam</button>
+  </section>
+
+  <section data-exam-root hidden>
+    <div data-exam-progress-mount>
+      <ProgressIndicator total={testFormat.questionsPerExam} current={0} />
+    </div>
+    <p class="muted" data-exam-timer></p>
+    <ol class="stack exam-question-list" data-exam-questions></ol>
+    <button type="button" class="btn" data-exam-submit disabled>Submit Exam</button>
+  </section>
+
+  <script type="application/json" id="exam-data" set:html={JSON.stringify(clientPayload)} />
+</BaseLayout>
+
+<style>
+  .exam-question-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+  }
+</style>
+
+<script>
+  import { initMockExam } from "../client/exam.js";
+  initMockExam();
+</script>

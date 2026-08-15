@@ -1,0 +1,21 @@
+---
+export interface Props {
+  src: string;
+  label?: string;
+}
+
+const { src, label = "Listen" } = Astro.props;
+---
+
+<audio class="audio-player" controls preload="none" aria-label={label}>
+  <source src={src} />
+  Your browser does not support audio playback. You can still read the question text above.
+</audio>
+
+<style>
+  .audio-player {
+    width: 100%;
+    max-width: 320px;
+    height: 2.25rem;
+  }
+</style>

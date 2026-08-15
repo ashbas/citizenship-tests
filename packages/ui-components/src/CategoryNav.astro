@@ -1,0 +1,65 @@
+---
+import type { CategoryWithCount } from "@citizenship-tests/quiz-engine";
+
+export interface Props {
+  categories: CategoryWithCount[];
+  activeSlug?: string;
+}
+
+const { categories, activeSlug } = Astro.props;
+---
+
+<nav class="category-nav" aria-label="Categories">
+  <ul class="grid grid-2">
+    {
+      categories.map((category) => (
+        <li>
+          <a
+            class="category-nav__item"
+            href={`/categories/${category.slug}`}
+            aria-current={activeSlug === category.slug ? "page" : undefined}
+          >
+            <span class="category-nav__name">{category.name}</span>
+            <span class="badge category-nav__count">{category.questionCount} questions</span>
+            <span class="muted category-nav__desc">{category.description}</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<style>
+  .category-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .category-nav__item {
+    display: block;
+    text-decoration: none;
+    color: var(--color-text);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1rem 1.1rem;
+    height: 100%;
+  }
+  .category-nav__item:hover {
+    border-color: var(--color-primary);
+  }
+  .category-nav__name {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+  }
+  .category-nav__count {
+    background: var(--color-border);
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+  }
+  .category-nav__desc {
+    display: block;
+    font-size: 0.9rem;
+  }
+</style>

@@ -1,0 +1,15 @@
+---
+import CategoryPageLayout from "@citizenship-tests/site-generator/layouts/CategoryPageLayout.astro";
+import { siteData } from "../../lib/siteData";
+
+export function getStaticPaths() {
+  return siteData.categories.map((category) => ({
+    params: { slug: category.slug },
+    props: { category },
+  }));
+}
+
+const { category } = Astro.props;
+---
+
+<CategoryPageLayout data={siteData} category={category} />

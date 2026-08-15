@@ -1,0 +1,42 @@
+---
+import BaseLayout from "@citizenship-tests/site-generator/layouts/BaseLayout.astro";
+import { buildMeta } from "@citizenship-tests/seo-utils";
+import { siteData } from "../lib/siteData";
+
+const { config } = siteData;
+const { officialSource } = config;
+
+const meta = buildMeta({
+  siteName: config.siteName,
+  domain: config.domain,
+  path: "/official-resources",
+  pageTitle: "Official Resources",
+  description: "Links to the official GOV.UK Life in the UK test page and handbook — always verify against these before your test.",
+});
+---
+
+<BaseLayout siteName={config.siteName} disclaimer={config.disclaimer} meta={meta} currentPath="/official-resources">
+  <h1>Official Resources</h1>
+  <p>
+    {config.siteName} is an independent, unofficial study aid. For anything official — booking your test,
+    eligibility rules, or the authoritative study material — always go directly to the government sources below.
+  </p>
+
+  <div class="card stack">
+    <h2>{officialSource.name}</h2>
+    <p>The official GOV.UK page covering test eligibility, booking, and what to bring on the day.</p>
+    <a class="btn" href={officialSource.url} rel="noopener noreferrer" target="_blank">Visit GOV.UK →</a>
+  </div>
+
+  {
+    officialSource.handbookName && (
+      <div class="card stack">
+        <h2>{officialSource.handbookName}</h2>
+        <p>
+          The official handbook is the definitive source for test content. Every question on this site links
+          back to the handbook chapter it's drawn from.
+        </p>
+      </div>
+    )
+  }
+</BaseLayout>

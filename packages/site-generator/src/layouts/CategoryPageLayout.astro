@@ -1,0 +1,64 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import QuestionCard from "@citizenship-tests/ui-components/QuestionCard.astro";
+import AdSlot from "@citizenship-tests/ui-components/AdSlot.astro";
+import { buildMeta, buildFaqPageSchema, buildBreadcrumbSchema } from "@citizenship-tests/seo-utils";
+import { questionsForCategory } from "@citizenship-tests/quiz-engine";
+import type { SiteData } from "../data/index.js";
+import type { Category } from "@citizenship-tests/quiz-engine";
+
+export interface Props {
+  data: SiteData;
+  category: Category;
+}
+
+const { data, category } = Astro.props;
+const { config, questions } = data;
+const categoryQuestions = questionsForCategory(questions, category.slug);
+
+const meta = buildMeta({
+  siteName: config.siteName,
+  domain: config.domain,
+  path: `/categories/${category.slug}`,
+  pageTitle: category.name,
+  description: `${category.description} ${categoryQuestions.length} practice questions with explanations, sourced from ${category.sourceChapter}.`,
+});
+
+const structuredData = [
+  buildFaqPageSchema(categoryQuestions),
+  buildBreadcrumbSchema([
+    { name: "Study by Category", url: `${config.domain}/categories` },
+    { name: category.name, url: `${config.domain}/categories/${category.slug}` },
+  ]),
+];
+
+const AD_INTERVAL = 6;
+---
+
+<BaseLayout
+  siteName={config.siteName}
+  disclaimer={config.disclaimer}
+  meta={meta}
+  currentPath={`/categories/${category.slug}`}
+  structuredData={structuredData}
+>
+  <nav aria-label="Breadcrumb"><a href="/categories">Study by Category</a> / {category.name}</nav>
+  <h1>{category.name}</h1>
+  <p class="muted">{category.description}</p>
+  <p class="muted">Source: {category.sourceChapter}</p>
+
+  <div class="stack">
+    {
+      categoryQuestions.map((question, index) => (
+        <>
+          <QuestionCard question={question} mode="practice" questionNumber={index + 1} />
+          {(index + 1) % AD_INTERVAL === 0 && index !== categoryQuestions.length - 1 && (
+            <AdSlot slot="category-page" />
+          )}
+        </>
+      ))
+    }
+  </div>
+
+  <AdSlot slot="category-page" />
+</BaseLayout>
