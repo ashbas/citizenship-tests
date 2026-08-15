@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "australian-values",
+    "name": "Australian Values",
+    "description": "The core values every applicant must understand — and answer correctly to pass, regardless of overall score.",
+    "sourceChapter": "Australian Values Statement"
+  },
+  {
+    "slug": "national-identity-and-symbols",
+    "name": "National Identity and Symbols",
+    "description": "Australia's flag, floral emblem, anthem, coat of arms, and national day.",
+    "sourceChapter": "Our Common Bond — Australia and Its People"
+  },
+  {
+    "slug": "geography-and-history",
+    "name": "Geography and History",
+    "description": "Australia's states and territories, federation, First Nations peoples, and key historical events.",
+    "sourceChapter": "Our Common Bond — Australia and Its People"
+  },
+  {
+    "slug": "democratic-beliefs-and-freedoms",
+    "name": "Democratic Beliefs and Freedoms",
+    "description": "Voting, representative democracy, and the freedoms Australians are entitled to.",
+    "sourceChapter": "Our Common Bond — Australia's Democratic Beliefs, Rights and Liberties"
+  },
+  {
+    "slug": "government-and-law",
+    "name": "Government and the Law",
+    "description": "How Australia is governed, the courts, and civic responsibilities like jury service.",
+    "sourceChapter": "Our Common Bond — Government and the Law in Australia"
+  }
+]

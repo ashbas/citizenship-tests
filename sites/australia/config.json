@@ -1,0 +1,26 @@
+{
+  "countryCode": "AU",
+  "siteName": "Australian Citizenship Test Practice",
+  "domain": "https://example-au-domain.com",
+  "officialSource": {
+    "name": "Department of Home Affairs — Australian Citizenship Test",
+    "url": "https://www.homeaffairs.gov.au/citizenship/test",
+    "handbookName": "Australian Citizenship: Our Common Bond"
+  },
+  "testFormat": {
+    "totalQuestionsInPool": null,
+    "questionsPerExam": 20,
+    "timeLimitMinutes": 45,
+    "passMarkPercent": 75,
+    "passMarkCorrectCount": 15
+  },
+  "scoringRules": {
+    "type": "mustPassSubset",
+    "subsetCategorySlug": "australian-values",
+    "subsetRequiredCorrectCount": 5,
+    "subsetTotalCount": 5,
+    "note": "All 5 Australian values questions must be answered correctly, regardless of your overall score, or the exam is failed."
+  },
+  "disclaimer": "This is an independent, unofficial practice resource. It is not affiliated with the Australian Department of Home Affairs or any government body. Always verify against the official source and 'Our Common Bond' resource booklet before your test.",
+  "adsensePublisherId": "pub-0000000000000000"
+}
