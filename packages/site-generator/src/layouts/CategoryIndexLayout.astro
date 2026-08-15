@@ -4,6 +4,7 @@ import CategoryNav from "@citizenship-tests/ui-components/CategoryNav.astro";
 import AdSlot from "@citizenship-tests/ui-components/AdSlot.astro";
 import { buildMeta } from "@citizenship-tests/seo-utils";
 import { withQuestionCounts } from "@citizenship-tests/quiz-engine";
+import { withBase } from "@citizenship-tests/ui-components/base";
 import type { SiteData } from "../data/index.js";
 
 export interface Props {
@@ -32,6 +33,6 @@ const meta = buildMeta({
   <CategoryNav categories={categoriesWithCounts} />
   <AdSlot slot="category-index" />
   <p>
-    Ready for the real thing? <a href="/mock-exam">Take a timed mock exam →</a>
+    Ready for the real thing? <a href={withBase("/mock-exam")}>Take a timed mock exam →</a>
   </p>
 </BaseLayout>

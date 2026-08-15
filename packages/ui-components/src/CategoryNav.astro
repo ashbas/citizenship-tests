@@ -1,5 +1,6 @@
 ---
 import type { CategoryWithCount } from "@citizenship-tests/quiz-engine";
+import { withBase } from "./base";
 
 export interface Props {
   categories: CategoryWithCount[];
@@ -16,7 +17,7 @@ const { categories, activeSlug } = Astro.props;
         <li>
           <a
             class="category-nav__item"
-            href={`/categories/${category.slug}`}
+            href={withBase(`/categories/${category.slug}`)}
             aria-current={activeSlug === category.slug ? "page" : undefined}
           >
             <span class="category-nav__name">{category.name}</span>
