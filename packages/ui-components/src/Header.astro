@@ -1,4 +1,6 @@
 ---
+import { withBase } from "./base";
+
 export interface Props {
   siteName: string;
   currentPath?: string;
@@ -17,13 +19,13 @@ const navItems = [
 <a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
   <div class="container site-header__inner">
-    <a class="site-header__brand" href="/">{siteName}</a>
+    <a class="site-header__brand" href={withBase("/")}>{siteName}</a>
     <nav class="site-header__nav" aria-label="Primary">
       <ul>
         {
           navItems.map((item) => (
             <li>
-              <a href={item.href} aria-current={currentPath === item.href ? "page" : undefined}>
+              <a href={withBase(item.href)} aria-current={currentPath === item.href ? "page" : undefined}>
                 {item.label}
               </a>
             </li>

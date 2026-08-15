@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@citizenship-tests/site-generator/layouts/BaseLayout.astro";
 import { buildMeta } from "@citizenship-tests/seo-utils";
+import { withBase } from "@citizenship-tests/ui-components/base";
 import { siteData } from "../lib/siteData";
 
 const { config, questions, categories } = siteData;
@@ -23,8 +24,8 @@ const meta = buildMeta({
       exam modeled on the real thing.
     </p>
     <div class="hero__actions">
-      <a class="btn" href="/mock-exam">Take a Mock Exam</a>
-      <a class="btn btn-secondary" href="/categories">Study by Category</a>
+      <a class="btn" href={withBase("/mock-exam")}>Take a Mock Exam</a>
+      <a class="btn btn-secondary" href={withBase("/categories")}>Study by Category</a>
     </div>
   </section>
 
@@ -37,8 +38,8 @@ const meta = buildMeta({
       <li>No account, no paywall — this site is, and will remain, completely free.</li>
     </ul>
     <p>
-      <a href="/how-it-works">Read how the real test works →</a> or
-      <a href="/official-resources">go straight to official GOV.UK resources →</a>.
+      <a href={withBase("/how-it-works")}>Read how the real test works →</a> or
+      <a href={withBase("/official-resources")}>go straight to official GOV.UK resources →</a>.
     </p>
   </section>
 </BaseLayout>

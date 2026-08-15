@@ -8,6 +8,7 @@ import {
 } from "@citizenship-tests/quiz-engine";
 import { renderReviewQuestion } from "./renderQuestion.js";
 import { EXAM_RESULT_STORAGE_KEY, type StoredExamResult } from "./exam.js";
+import { withBase } from "@citizenship-tests/ui-components/base";
 
 interface ResultsPayload {
   questions: Question[];
@@ -90,7 +91,7 @@ export function initResults(): void {
       if (!category) return;
       const li = document.createElement("li");
       const link = document.createElement("a");
-      link.href = `/categories/${slug}`;
+      link.href = withBase(`/categories/${slug}`);
       link.textContent = `Review ${category.name} questions →`;
       li.appendChild(link);
       weakList.appendChild(li);

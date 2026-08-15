@@ -1,4 +1,6 @@
 ---
+import { withBase } from "./base";
+
 export interface Props {
   siteName: string;
   disclaimer: string;
@@ -13,9 +15,9 @@ const year = new Date().getFullYear();
     <p class="muted site-footer__disclaimer">{disclaimer}</p>
     <nav aria-label="Footer">
       <ul class="site-footer__links">
-        <li><a href="/privacy-policy">Privacy Policy</a></li>
-        <li><a href="/disclaimer">Disclaimer</a></li>
-        <li><a href="/official-resources">Official Resources</a></li>
+        <li><a href={withBase("/privacy-policy")}>Privacy Policy</a></li>
+        <li><a href={withBase("/disclaimer")}>Disclaimer</a></li>
+        <li><a href={withBase("/official-resources")}>Official Resources</a></li>
       </ul>
     </nav>
     <p class="muted site-footer__copy">&copy; {year} {siteName}. Not affiliated with any government body.</p>

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@citizenship-tests/site-generator/layouts/BaseLayout.astro";
 import { buildMeta } from "@citizenship-tests/seo-utils";
+import { withBase } from "@citizenship-tests/ui-components/base";
 import { siteData } from "../lib/siteData";
 
 const { config } = siteData;
@@ -61,11 +62,11 @@ const meta = buildMeta({
         Read the official handbook, <em>{officialSource.handbookName}</em>.
       </li>
       <li>
-        <a href="/categories">Work through practice questions by category</a> on this site, reading the
+        <a href={withBase("/categories")}>Work through practice questions by category</a> on this site, reading the
         explanation after each one.
       </li>
       <li>
-        Once you feel ready, <a href="/mock-exam">take a full timed mock exam</a> to simulate the real
+        Once you feel ready, <a href={withBase("/mock-exam")}>take a full timed mock exam</a> to simulate the real
         experience.
       </li>
     </ol>

@@ -3,6 +3,7 @@ import BaseLayout from "./BaseLayout.astro";
 import ResultsSummary from "@citizenship-tests/ui-components/ResultsSummary.astro";
 import AdSlot from "@citizenship-tests/ui-components/AdSlot.astro";
 import { buildMeta } from "@citizenship-tests/seo-utils";
+import { withBase } from "@citizenship-tests/ui-components/base";
 import type { SiteData } from "../data/index.js";
 
 export interface Props {
@@ -44,7 +45,7 @@ const clientPayload = {
     <ol class="stack results-review-list" data-results-review></ol>
   </section>
 
-  <p><a href="/mock-exam" class="btn btn-secondary">Take another mock exam</a></p>
+  <p><a href={withBase("/mock-exam")} class="btn btn-secondary">Take another mock exam</a></p>
 
   <script type="application/json" id="results-data" set:html={JSON.stringify(clientPayload)} />
 </BaseLayout>
