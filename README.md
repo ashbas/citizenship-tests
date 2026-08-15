@@ -7,8 +7,8 @@ exclusively via Google AdSense: no accounts, no paywalls, no subscriptions.
 Canada (`canadacitizenshiptestpractice.ca`) already exists as a standalone
 site and is **out of scope** — nothing here touches it.
 
-**Status: Phase 1 complete (shared engine + UK site).** Australia is
-scaffolded as a placeholder only — see [`sites/australia/README.md`](sites/australia/README.md).
+**Status: Phase 1 and Phase 2 complete (shared engine + UK site + Australia
+site).** US and NZ are deferred to later phases, per the phase plan.
 
 ## Repo structure
 
@@ -31,7 +31,11 @@ scaffolded as a placeholder only — see [`sites/australia/README.md`](sites/aus
   /uk                Live: config.json, categories.json, questions.json (42
                       original questions across 7 categories), content/, and a
                       thin Astro app that wires the shared packages together.
-  /australia         Placeholder only (Phase 2) — see its README.
+                      Uses "standard" scoring.
+  /australia         Live: 25 original questions across 5 categories, using
+                      "mustPassSubset" scoring (see below) — the site that
+                      validated the Phase 1 abstraction. Required zero
+                      changes to /packages to build.
 /tools
   build-all.sh         Builds every /sites/* project that has its own package.json.
   new-site-scaffold.sh Scaffolds a new /sites/<country> from the UK site's
@@ -41,10 +45,15 @@ scaffolded as a placeholder only — see [`sites/australia/README.md`](sites/aus
 **Design rule:** nothing country-specific lives in `/packages`. If a future
 country needs a `/packages` change beyond adding generic, config-driven
 behavior, that's a signal the abstraction is wrong and should be fixed before
-adding more countries. The Australia scoring rule (`mustPassSubset` — 5 of 20
-"values" questions must *all* be correct, regardless of overall score) is
-already implemented generically in `quiz-engine`'s scoring registry precisely
-so Phase 2 doesn't need to touch it.
+adding more countries. This was validated, not just asserted: building the
+Australia site (`mustPassSubset` scoring — 5 of 20 "values" questions must
+*all* be correct, regardless of overall score) touched zero files under
+`/packages`. One real bug surfaced along the way and was fixed generically
+rather than special-cased: the results page originally showed the raw
+category slug (`"australian-values"`) in the subset callout instead of its
+display name — fixed in `site-generator/src/client/results.ts` by looking up
+the category name from the already-available category list, which benefits
+any future `mustPassSubset` site equally.
 
 ## Tech stack
 
@@ -99,18 +108,23 @@ or, for a test with a mandatory subset (like Australia's):
 picks the right strategy by `type` at runtime — no per-country branching
 anywhere else in the codebase.
 
-## Running the UK site
+## Running a site
 
 ```bash
 pnpm install
-pnpm --filter @citizenship-tests/site-uk dev      # local dev server
-pnpm --filter @citizenship-tests/site-uk build     # static build -> sites/uk/dist
-pnpm --filter @citizenship-tests/site-uk run audio # generate static audio files
+pnpm --filter @citizenship-tests/site-uk dev              # local dev server
+pnpm --filter @citizenship-tests/site-uk build             # static build -> sites/uk/dist
+pnpm --filter @citizenship-tests/site-uk run audio         # generate static audio files
+
+pnpm --filter @citizenship-tests/site-australia dev        # same commands, any site
+pnpm --filter @citizenship-tests/site-australia build
+pnpm --filter @citizenship-tests/site-australia run audio
 ```
 
 Or, from the root: `pnpm build:uk`, `pnpm dev:uk`, `bash tools/build-all.sh`
-(builds every site under `/sites` that has a `package.json` — Australia is
-skipped automatically until it's scaffolded).
+(builds every site under `/sites` that has a `package.json` — a future
+placeholder country is skipped automatically until it's scaffolded, the way
+Australia was during Phase 1).
 
 Typecheck everything with `pnpm -r --if-present typecheck` (runs `tsc
 --noEmit` in each package and `astro check` in each site).
@@ -130,7 +144,7 @@ same-tab navigation, not a closed tab.
 
 ```bash
 tools/new-site-scaffold.sh <slug> <countryCode> "<Site Name>" <domain>
-# e.g. tools/new-site-scaffold.sh australia AU "Australian Citizenship Test Practice" https://example-au-domain.com
+# e.g. tools/new-site-scaffold.sh newzealand NZ "NZ Citizenship Test Practice" https://example-nz-domain.com
 ```
 
 This copies the UK site's structural files (all genuinely generic — no
@@ -138,12 +152,14 @@ UK-specific logic lives in `sites/uk/src/`) and writes stub
 `config.json`/`categories.json`/`questions.json`. What's left is a
 data/config task: fill in real categories and original questions, review the
 one or two spots of site-specific homepage copy the script flags, then
-`pnpm install && pnpm --filter @citizenship-tests/site-<slug> build`.
+`pnpm install && pnpm --filter @citizenship-tests/site-<slug> build`. This is
+exactly how `sites/australia` was built in Phase 2 — see its `config.json`
+for a populated `mustPassSubset` example.
 
 ## Known limitations / open questions
 
 Carried over from the original spec, plus decisions made while building
-Phase 1:
+Phase 1 and Phase 2:
 
 - **TTS provider**: unresolved. `audio-pipeline` ships a zero-cost `silence`
   placeholder provider (silent WAV files, so the pipeline, caching, and
@@ -155,36 +171,46 @@ Phase 1:
   provider will produce, so placeholder audio won't play back correctly in
   a browser until a real provider is configured). Evaluate cost/voice
   quality/redistribution licensing before launch.
-- **Domain names**: `sites/uk/config.json`'s `domain` is a placeholder
-  (`https://example-uk-domain.com`), as is `adsensePublisherId`
-  (`pub-0000000000000000`). Both need to be swapped for real values —
-  everything (canonical URLs, sitemap, robots.txt, ads.txt) is generated
-  from `config.json`, so this is a one-line change per site.
+- **Domain names**: both sites' `config.json` `domain` fields are placeholders
+  (`https://example-uk-domain.com`, `https://example-au-domain.com`), as is
+  `adsensePublisherId` (`pub-0000000000000000`) on both. These need to be
+  swapped for real values before launch — everything (canonical URLs,
+  sitemap, robots.txt, ads.txt) is generated from `config.json`, so this is
+  a one-line change per site.
 - **Cookie consent**: implemented as a small custom banner
   (`ui-components/CookieConsentBanner.astro`) rather than a third-party CMP
   script, to avoid a render-blocking third-party dependency. Revisit if a
   target market's compliance needs outgrow it.
-- **Question bank size**: the UK site ships 42 original questions across 7
-  categories (6 each) as a Phase 1 seed set — enough to validate the full
-  pipeline (category browsing, weighted mock exam sampling, audio, scoring)
-  end to end, but smaller than a production-ready bank should be before
-  real launch/AdSense review.
+- **Question bank size**: UK ships 42 original questions across 7 categories
+  (6 each); Australia ships 25 across 5 categories (5 each, including the
+  full mandatory "Australian Values" set). Both are Phase-appropriate seed
+  sets — enough to validate the full pipeline (category browsing, weighted
+  mock exam sampling, audio, scoring) end to end, but smaller than a
+  production-ready bank should be before real launch/AdSense review.
 
 ## Verification performed
 
-- `pnpm -r --if-present typecheck` — clean across all packages and the UK
-  site (`astro check`: 0 errors/warnings/hints).
-- `pnpm --filter @citizenship-tests/site-uk build` — static build succeeds,
-  produces all 15 pages, `robots.txt`, `ads.txt`, `sitemap.xml`.
-- End-to-end browser test (Playwright): practice-mode reveal on a category
-  page, a full 24-question mock exam run (mixed correct/incorrect answers),
-  submit, and results-page scoring/review — verified the reported score
-  matches the expected count and the review list renders all 24 answers
-  with no console errors.
+- `pnpm -r --if-present typecheck` — clean across all packages and both
+  sites (`astro check`: 0 errors/warnings/hints each).
+- `pnpm --filter @citizenship-tests/site-uk build` and
+  `pnpm --filter @citizenship-tests/site-australia build` — both succeed;
+  `bash tools/build-all.sh` builds both from the root in one pass.
+- End-to-end browser tests (Playwright):
+  - UK: practice-mode reveal on a category page, a full 24-question mock
+    exam run (mixed correct/incorrect answers), submit, and results-page
+    scoring/review — reported score matches the expected count exactly, all
+    24 answers render in the review, zero console errors.
+  - Australia: confirmed all 5 "Australian Values" questions are included
+    in every generated exam (not just a random subset); confirmed a
+    20/20-but-one-values-question-wrong attempt is correctly reported as a
+    **FAIL** with the decisive-subset callout, and a fully-correct attempt
+    as a **PASS** — this is the scenario the spec calls out as a genuine
+    differentiator (section 6.3), verified end to end rather than assumed.
 - Lighthouse (performance category only, local `astro preview`): 100/100 on
-  both a category page (LCP 0.7s) and the mock exam page (LCP 1.0s),
-  comfortably under the spec's <1.5s LCP target.
-- `tools/new-site-scaffold.sh` and `tools/build-all.sh` were run against a
-  throwaway scaffolded site to confirm a freshly-scaffolded site builds out
-  of the box and that `build-all.sh` correctly skips the not-yet-implemented
-  Australia placeholder.
+  a UK category page (LCP 0.7s), the UK mock exam page (LCP 1.0s), and an
+  AU category page (LCP 0.7s) — comfortably under the spec's <1.5s LCP
+  target.
+- `tools/new-site-scaffold.sh` and `tools/build-all.sh` were exercised twice:
+  once against a throwaway scaffolded site (confirming a fresh scaffold
+  builds out of the box and `build-all.sh` skips unimplemented
+  placeholders), and once for real to produce the actual Australia site.

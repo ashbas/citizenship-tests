@@ -1,0 +1,24 @@
+{
+  "name": "@citizenship-tests/site-australia",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "audio": "pnpm --filter @citizenship-tests/audio-pipeline run generate -- --site \"$(pwd)\"",
+    "typecheck": "astro check"
+  },
+  "dependencies": {
+    "@citizenship-tests/quiz-engine": "workspace:*",
+    "@citizenship-tests/seo-utils": "workspace:*",
+    "@citizenship-tests/ui-components": "workspace:*",
+    "@citizenship-tests/site-generator": "workspace:*",
+    "astro": "^7.2.2"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.0",
+    "typescript": "^5.6.0"
+  }
+}

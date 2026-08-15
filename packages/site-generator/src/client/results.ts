@@ -32,6 +32,7 @@ export function initResults(): void {
   const payload: ResultsPayload = JSON.parse(dataEl.textContent ?? "{}");
 
   const byId = new Map(payload.questions.map((q) => [q.id, q]));
+  const categoriesBySlug = new Map(payload.categories.map((c) => [c.slug, c]));
   const examQuestions = result.questionIds.map((id) => byId.get(id)).filter((q): q is Question => Boolean(q));
 
   if (examQuestions.length === 0) {
@@ -67,9 +68,11 @@ export function initResults(): void {
     const headline = subsetBlock.querySelector("[data-results-subset-headline]");
     const detail = subsetBlock.querySelector("[data-results-subset-detail]");
     if (headline) {
+      const subsetCategoryName =
+        categoriesBySlug.get(score.subsetResult.categorySlug)?.name ?? score.subsetResult.categorySlug;
       headline.textContent = score.subsetResult.passed
-        ? `You answered all ${score.subsetResult.requiredCorrectCount} required "${score.subsetResult.categorySlug}" questions correctly.`
-        : `You only answered ${score.subsetResult.correctCount}/${score.subsetResult.totalCount} "${score.subsetResult.categorySlug}" questions correctly.`;
+        ? `You answered all ${score.subsetResult.requiredCorrectCount} required "${subsetCategoryName}" questions correctly.`
+        : `You only answered ${score.subsetResult.correctCount}/${score.subsetResult.totalCount} "${subsetCategoryName}" questions correctly.`;
     }
     if (detail && score.subsetResult.isDecisive) {
       detail.textContent = `The real exam requires all ${score.subsetResult.requiredCorrectCount} of these correct regardless of your overall score — so this attempt would be a FAIL under the real test rules.`;
@@ -82,7 +85,6 @@ export function initResults(): void {
   const weakList = document.querySelector<HTMLElement>("[data-results-weak-list]");
   if (weakSlugs.length > 0 && weakSection && weakList) {
     weakSection.hidden = false;
-    const categoriesBySlug = new Map(payload.categories.map((c) => [c.slug, c]));
     weakSlugs.forEach((slug) => {
       const category = categoriesBySlug.get(slug);
       if (!category) return;

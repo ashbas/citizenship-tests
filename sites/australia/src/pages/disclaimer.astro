@@ -1,0 +1,36 @@
+---
+import BaseLayout from "@citizenship-tests/site-generator/layouts/BaseLayout.astro";
+import { buildMeta } from "@citizenship-tests/seo-utils";
+import { siteData } from "../lib/siteData";
+
+const { config } = siteData;
+
+const meta = buildMeta({
+  siteName: config.siteName,
+  domain: config.domain,
+  path: "/disclaimer",
+  pageTitle: "Disclaimer",
+  description: "This site is an independent, unofficial practice resource and is not affiliated with any government body.",
+});
+---
+
+<BaseLayout siteName={config.siteName} disclaimer={config.disclaimer} meta={meta} currentPath="/disclaimer">
+  <h1>Disclaimer</h1>
+  <div class="stack">
+    <p>{config.disclaimer}</p>
+    <p>
+      Questions and explanations on this site are original content written to help you study — they are not
+      reproduced from the official handbook, and passing a mock exam here is not a guarantee of passing the real
+      test.
+    </p>
+    <p>
+      This site does not collect test bookings, does not process payments related to your actual test, and has
+      no relationship with {config.officialSource.name.split("—")[0].trim()} beyond linking to its public
+      resources.
+    </p>
+    <p>
+      See the <a href="/official-resources">Official Resources</a> page for links to the authoritative government
+      sources you should rely on for anything official.
+    </p>
+  </div>
+</BaseLayout>

@@ -1,0 +1,54 @@
+---
+import BaseLayout from "@citizenship-tests/site-generator/layouts/BaseLayout.astro";
+import { buildMeta } from "@citizenship-tests/seo-utils";
+import { siteData } from "../lib/siteData";
+
+const { config } = siteData;
+
+const meta = buildMeta({
+  siteName: config.siteName,
+  domain: config.domain,
+  path: "/privacy-policy",
+  pageTitle: "Privacy Policy",
+  description: "How this site uses cookies and data, including third-party advertising cookies from Google AdSense.",
+});
+---
+
+<BaseLayout siteName={config.siteName} disclaimer={config.disclaimer} meta={meta} currentPath="/privacy-policy">
+  <h1>Privacy Policy</h1>
+
+  <div class="stack">
+    <section>
+      <h2>No accounts, no personal data collection</h2>
+      <p>
+        {config.siteName} has no user accounts, no login, and does not ask you for personal information. Your
+        mock exam answers stay in your browser (in your current tab's session storage) and are never sent to us
+        or stored on any server.
+      </p>
+    </section>
+
+    <section>
+      <h2>Advertising cookies</h2>
+      <p>
+        This site is funded by Google AdSense. Google and its partners may use cookies to serve ads based on your
+        prior visits to this or other websites. You can opt out of personalised advertising by visiting Google's
+        <a href="https://adssettings.google.com" rel="noopener noreferrer" target="_blank">Ads Settings</a>, and
+        can control cookie preferences on this site using the cookie banner shown on your first visit.
+      </p>
+    </section>
+
+    <section>
+      <h2>Local storage and session storage</h2>
+      <p>
+        We use your browser's session storage to hand off your mock exam answers to the results page, and (where
+        noted) local storage to remember your cookie consent choice. This data stays on your device and is
+        cleared when you close your browser tab, or can be cleared any time via your browser settings.
+      </p>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>Questions about this policy can be directed to the site owner via the contact details on our domain.</p>
+    </section>
+  </div>
+</BaseLayout>

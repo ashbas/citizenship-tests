@@ -1,0 +1,377 @@
+[
+  {
+    "id": "au-001",
+    "categorySlug": "australian-values",
+    "question": "Which of the following is one of Australia's core values, as set out in the Australian Values Statement?",
+    "options": [
+      "Commitment to the rule of law",
+      "Obedience to a single political party",
+      "Rejection of freedom of religion",
+      "Compulsory religious observance"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "The Australian Values Statement, which applicants for citizenship and many visas must acknowledge, lists commitment to the rule of law as one of Australia's fundamental values — everyone, including government, is subject to and equal before the law.",
+    "sourceReference": "Australian Values Statement",
+    "audioFile": "/audio/australia/au-001.mp3"
+  },
+  {
+    "id": "au-002",
+    "categorySlug": "australian-values",
+    "question": "Australia is committed to which system of government?",
+    "options": [
+      "Absolute monarchy",
+      "Parliamentary democracy",
+      "One-party rule",
+      "Military rule"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Australia is a parliamentary democracy: citizens elect representatives to Parliament, and government is formed by the party or coalition that can command a majority in the House of Representatives.",
+    "sourceReference": "Australian Values Statement",
+    "audioFile": "/audio/australia/au-002.mp3"
+  },
+  {
+    "id": "au-003",
+    "categorySlug": "australian-values",
+    "question": "Which of these reflects Australia's commitment to equality?",
+    "options": [
+      "Legal privileges based on gender",
+      "Restricting women from holding public office",
+      "Equality of men and women",
+      "Unequal pay based on gender being lawful"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Equality of opportunity between men and women is explicitly listed as a core Australian value, reflected in anti-discrimination law covering employment, pay, and public office.",
+    "sourceReference": "Australian Values Statement",
+    "audioFile": "/audio/australia/au-003.mp3"
+  },
+  {
+    "id": "au-004",
+    "categorySlug": "australian-values",
+    "question": "What does freedom of religion mean as an Australian value?",
+    "options": [
+      "Only the official state religion may be practised",
+      "Religious belief is banned from public life",
+      "All citizens must adopt the same faith",
+      "People are free to follow any religion, or none, and to change their religion"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "Australia has no official state religion. Freedom of religion means people can practise any faith, change faiths, or hold no religious belief at all, without persecution.",
+    "sourceReference": "Australian Values Statement",
+    "audioFile": "/audio/australia/au-004.mp3"
+  },
+  {
+    "id": "au-005",
+    "categorySlug": "australian-values",
+    "question": "The idea of a \"fair go\", often cited as an Australian value, refers to what?",
+    "options": [
+      "A spirit of mutual respect, tolerance, and fairness for everyone",
+      "A guarantee of equal wealth for all citizens",
+      "A rule that only applies to Australian-born citizens",
+      "A legal requirement to support one political party"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "\"A fair go\" is a widely referenced Australian value describing a spirit of egalitarianism — mutual respect, tolerance, and fair treatment for everyone, regardless of background.",
+    "sourceReference": "Australian Values Statement",
+    "audioFile": "/audio/australia/au-005.mp3"
+  },
+  {
+    "id": "au-006",
+    "categorySlug": "national-identity-and-symbols",
+    "question": "What is the floral emblem of Australia?",
+    "options": [
+      "Waratah",
+      "Golden Wattle",
+      "Kangaroo Paw",
+      "Sturt's Desert Pea"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "The Golden Wattle (Acacia pycnantha) was proclaimed Australia's national floral emblem in 1988. The other flowers are state emblems (Waratah for NSW, for example).",
+    "sourceReference": "Our Common Bond — Australia and Its People",
+    "audioFile": "/audio/australia/au-006.mp3"
+  },
+  {
+    "id": "au-007",
+    "categorySlug": "national-identity-and-symbols",
+    "question": "How many points does the Commonwealth Star on the Australian flag have?",
+    "options": [
+      "Six",
+      "Five",
+      "Seven",
+      "Eight"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "The Commonwealth Star has seven points: one for each of the six original states, and one representing all of Australia's territories combined.",
+    "sourceReference": "Our Common Bond — Australia and Its People",
+    "audioFile": "/audio/australia/au-007.mp3"
+  },
+  {
+    "id": "au-008",
+    "categorySlug": "national-identity-and-symbols",
+    "question": "What does Australia Day, held on 26 January, mark?",
+    "options": [
+      "Federation of the Australian colonies",
+      "The end of the Second World War",
+      "The landing at Gallipoli",
+      "The anniversary of the arrival of the First Fleet at Sydney Cove in 1788"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "Australia Day commemorates the 1788 arrival of the First Fleet at Sydney Cove. It is a significant and, for many, contested date — for many Aboriginal and Torres Strait Islander people it also marks the beginning of colonisation.",
+    "sourceReference": "Our Common Bond — Australia and Its People",
+    "audioFile": "/audio/australia/au-008.mp3"
+  },
+  {
+    "id": "au-009",
+    "categorySlug": "national-identity-and-symbols",
+    "question": "What is the national anthem of Australia?",
+    "options": [
+      "Advance Australia Fair",
+      "Waltzing Matilda",
+      "God Save the King",
+      "I Am Australian"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "\"Advance Australia Fair\" has been Australia's national anthem since 1984, though \"Waltzing Matilda\" remains a well-loved unofficial national song.",
+    "sourceReference": "Our Common Bond — Australia and Its People",
+    "audioFile": "/audio/australia/au-009.mp3"
+  },
+  {
+    "id": "au-010",
+    "categorySlug": "national-identity-and-symbols",
+    "question": "Which animal, along with the kangaroo, appears on the Australian Coat of Arms?",
+    "options": [
+      "Koala",
+      "Emu",
+      "Wombat",
+      "Dingo"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "The Australian Coat of Arms features a kangaroo and an emu supporting a shield — both animals were chosen partly because neither can easily walk backwards, symbolising a nation moving forward.",
+    "sourceReference": "Our Common Bond — Australia and Its People",
+    "audioFile": "/audio/australia/au-010.mp3"
+  },
+  {
+    "id": "au-011",
+    "categorySlug": "geography-and-history",
+    "question": "What is the capital city of Australia?",
+    "options": [
+      "Sydney",
+      "Melbourne",
+      "Canberra",
+      "Brisbane"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Canberra, in the Australian Capital Territory, was purpose-built as the national capital as a compromise between rivals Sydney and Melbourne, and became the seat of government in 1927.",
+    "sourceReference": "Our Common Bond — Australia and Its People",
+    "audioFile": "/audio/australia/au-011.mp3"
+  },
+  {
+    "id": "au-012",
+    "categorySlug": "geography-and-history",
+    "question": "How many states does Australia have?",
+    "options": [
+      "Five",
+      "Seven",
+      "Four",
+      "Six"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "Australia has six states (New South Wales, Victoria, Queensland, Western Australia, South Australia, and Tasmania) plus mainland territories including the ACT and Northern Territory.",
+    "sourceReference": "Our Common Bond — Australia and Its People",
+    "audioFile": "/audio/australia/au-012.mp3"
+  },
+  {
+    "id": "au-013",
+    "categorySlug": "geography-and-history",
+    "question": "In what year did the Australian colonies federate into a single nation under a national government?",
+    "options": [
+      "1901",
+      "1788",
+      "1927",
+      "1942"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "On 1 January 1901, the six British colonies federated to form the Commonwealth of Australia, each becoming a state under a new national constitution.",
+    "sourceReference": "Our Common Bond — Australia and Its People",
+    "audioFile": "/audio/australia/au-013.mp3"
+  },
+  {
+    "id": "au-014",
+    "categorySlug": "geography-and-history",
+    "question": "Who are the Aboriginal and Torres Strait Islander peoples in relation to Australia?",
+    "options": [
+      "Recent immigrants",
+      "The original inhabitants of Australia, with cultures going back tens of thousands of years",
+      "Descendants of British settlers only",
+      "A group with no historical connection to the land"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Aboriginal and Torres Strait Islander peoples are Australia's First Nations peoples, with continuous cultures dating back more than 60,000 years — among the oldest continuous living cultures in the world.",
+    "sourceReference": "Our Common Bond — Australia and Its People",
+    "audioFile": "/audio/australia/au-014.mp3"
+  },
+  {
+    "id": "au-015",
+    "categorySlug": "geography-and-history",
+    "question": "What event does Anzac Day, held on 25 April, commemorate?",
+    "options": [
+      "The end of the Second World War",
+      "Federation of Australia",
+      "The landing of Australian and New Zealand forces at Gallipoli in 1915",
+      "The First Fleet's arrival"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Anzac Day commemorates the 1915 Gallipoli landing by the Australian and New Zealand Army Corps during the First World War, and has grown into a day honouring all Australians who served in war.",
+    "sourceReference": "Our Common Bond — Australia and Its People",
+    "audioFile": "/audio/australia/au-015.mp3"
+  },
+  {
+    "id": "au-016",
+    "categorySlug": "democratic-beliefs-and-freedoms",
+    "question": "At what age does voting become compulsory for Australian citizens in federal elections?",
+    "options": [
+      "16",
+      "21",
+      "25",
+      "18"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "Voting is compulsory for Australian citizens aged 18 and over — Australia is one of relatively few countries that enforces compulsory voting, with fines for failing to vote without a valid reason.",
+    "sourceReference": "Our Common Bond — Australia's Democratic Beliefs, Rights and Liberties",
+    "audioFile": "/audio/australia/au-016.mp3"
+  },
+  {
+    "id": "au-017",
+    "categorySlug": "democratic-beliefs-and-freedoms",
+    "question": "Which of these is a freedom protected in Australia?",
+    "options": [
+      "Freedom of speech",
+      "Freedom from ever being criticised",
+      "Freedom to break any law without consequence",
+      "Freedom to prevent others from voting"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Freedom of speech is a democratic freedom widely recognised in Australia, allowing people to express opinions and criticise government and public figures, within the limits of laws such as those against defamation.",
+    "sourceReference": "Our Common Bond — Australia's Democratic Beliefs, Rights and Liberties",
+    "audioFile": "/audio/australia/au-017.mp3"
+  },
+  {
+    "id": "au-018",
+    "categorySlug": "democratic-beliefs-and-freedoms",
+    "question": "What is the term for Australia's system in which citizens elect people to represent them in Parliament?",
+    "options": [
+      "Autocracy",
+      "Representative democracy",
+      "Theocracy",
+      "Oligarchy"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Australia is a representative democracy: rather than voting directly on every law, citizens elect Members of Parliament to represent their interests and make decisions on their behalf.",
+    "sourceReference": "Our Common Bond — Australia's Democratic Beliefs, Rights and Liberties",
+    "audioFile": "/audio/australia/au-018.mp3"
+  },
+  {
+    "id": "au-019",
+    "categorySlug": "democratic-beliefs-and-freedoms",
+    "question": "Under Australian law, discrimination on which of these grounds is prohibited in many areas of public life?",
+    "options": [
+      "Preferred sporting team",
+      "Favourite food",
+      "Race, sex, or religion",
+      "Choice of hobby"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Commonwealth anti-discrimination laws prohibit discrimination on grounds including race, sex, disability, and age across areas like employment, education, and access to services.",
+    "sourceReference": "Our Common Bond — Australia's Democratic Beliefs, Rights and Liberties",
+    "audioFile": "/audio/australia/au-019.mp3"
+  },
+  {
+    "id": "au-020",
+    "categorySlug": "democratic-beliefs-and-freedoms",
+    "question": "What does \"freedom of association\" allow Australians to do?",
+    "options": [
+      "Only join government-approved organisations",
+      "Avoid ever meeting in groups",
+      "Be forced to join a particular union",
+      "Join clubs, groups, or political parties of their choice"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "Freedom of association allows people to freely form, join, or leave organisations such as political parties, unions, clubs, and community groups, without government interference.",
+    "sourceReference": "Our Common Bond — Australia's Democratic Beliefs, Rights and Liberties",
+    "audioFile": "/audio/australia/au-020.mp3"
+  },
+  {
+    "id": "au-021",
+    "categorySlug": "government-and-law",
+    "question": "What is the name of the lower house of Australia's federal Parliament?",
+    "options": [
+      "The House of Representatives",
+      "The Senate",
+      "The High Court",
+      "The Privy Council"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "The House of Representatives is the lower house, made up of members elected from electorates roughly proportional to population. The party or coalition with a majority there forms government.",
+    "sourceReference": "Our Common Bond — Government and the Law in Australia",
+    "audioFile": "/audio/australia/au-021.mp3"
+  },
+  {
+    "id": "au-022",
+    "categorySlug": "government-and-law",
+    "question": "Who is Australia's Head of State?",
+    "options": [
+      "The Prime Minister",
+      "The reigning monarch, represented in Australia by the Governor-General",
+      "The Chief Justice",
+      "The Speaker of the House of Representatives"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Australia is a constitutional monarchy. The monarch is Head of State, represented domestically by the Governor-General, while the Prime Minister leads the elected government and exercises day-to-day political power.",
+    "sourceReference": "Our Common Bond — Government and the Law in Australia",
+    "audioFile": "/audio/australia/au-022.mp3"
+  },
+  {
+    "id": "au-023",
+    "categorySlug": "government-and-law",
+    "question": "How does the Australian Senate represent the states?",
+    "options": [
+      "Seats are allocated purely in proportion to each state's population",
+      "Only one senator represents each state",
+      "Each state elects an equal number of senators, regardless of population",
+      "The Governor-General appoints all senators"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Each of Australia's six states elects the same number of senators (currently 12 each), regardless of population, so the Senate gives smaller states an equal voice alongside larger ones like NSW and Victoria.",
+    "sourceReference": "Our Common Bond — Government and the Law in Australia",
+    "audioFile": "/audio/australia/au-023.mp3"
+  },
+  {
+    "id": "au-024",
+    "categorySlug": "government-and-law",
+    "question": "What is the role of the High Court of Australia?",
+    "options": [
+      "To write new legislation",
+      "To manage state police forces",
+      "To appoint the Prime Minister",
+      "To interpret and uphold the Australian Constitution and act as the final court of appeal"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "The High Court is Australia's highest court. It interprets the Constitution, resolves disputes between the Commonwealth and the states, and is the final court of appeal in the Australian legal system.",
+    "sourceReference": "Our Common Bond — Government and the Law in Australia",
+    "audioFile": "/audio/australia/au-024.mp3"
+  },
+  {
+    "id": "au-025",
+    "categorySlug": "government-and-law",
+    "question": "How is jury service generally regarded in Australia?",
+    "options": [
+      "A civic duty that eligible citizens are generally required to perform when summoned",
+      "Entirely optional, with no consequence for refusing",
+      "A role only performed by qualified lawyers",
+      "Not part of the Australian legal system"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Jury service is a civic responsibility in Australia. Eligible citizens on the electoral roll can be summoned and are generally required to attend unless they qualify for an exemption or deferral.",
+    "sourceReference": "Our Common Bond — Government and the Law in Australia",
+    "audioFile": "/audio/australia/au-025.mp3"
+  }
+]

@@ -1,0 +1,87 @@
+---
+import BaseLayout from "@citizenship-tests/site-generator/layouts/BaseLayout.astro";
+import { buildMeta } from "@citizenship-tests/seo-utils";
+import { siteData } from "../lib/siteData";
+
+const { config } = siteData;
+const { testFormat, officialSource, regionalVariants, scoringRules } = config;
+
+const meta = buildMeta({
+  siteName: config.siteName,
+  domain: config.domain,
+  path: "/how-it-works",
+  pageTitle: "How the Australian Citizenship Test Works",
+  description: `Format, timing, pass mark, and booking information for the real Australian citizenship test — ${testFormat.questionsPerExam} questions, ${testFormat.timeLimitMinutes} minutes, ${testFormat.passMarkPercent}% pass mark, plus the mandatory Australian Values questions.`,
+});
+---
+
+<BaseLayout siteName={config.siteName} disclaimer={config.disclaimer} meta={meta} currentPath="/how-it-works">
+  <h1>How the Australian Citizenship Test Works</h1>
+
+  <section class="stack">
+    <h2>Format</h2>
+    <ul>
+      <li>{testFormat.questionsPerExam} multiple-choice questions, drawn from the official resource booklet.</li>
+      <li>You have {testFormat.timeLimitMinutes} minutes to complete the test.</li>
+      <li>
+        You need at least {testFormat.passMarkCorrectCount} correct answers ({testFormat.passMarkPercent}%) to
+        pass overall.
+      </li>
+      <li>The test is taken on a computer at a Department of Home Affairs office.</li>
+    </ul>
+  </section>
+
+  {
+    scoringRules.type === "mustPassSubset" && (
+      <section class="stack">
+        <h2>The Australian Values rule</h2>
+        <p>
+          Meeting the overall pass mark is not enough on its own. You must also answer all{" "}
+          {scoringRules.subsetRequiredCorrectCount} of the {scoringRules.subsetTotalCount} "Australian Values"
+          questions correctly — get even one of these wrong, and the attempt is a fail, regardless of your
+          overall score. Our <a href="/mock-exam">mock exam</a> and{" "}
+          <a href="/results">results page</a> apply this rule exactly, and call it out separately from your
+          overall score so you know precisely where you stand.
+        </p>
+      </section>
+    )
+  }
+
+  <section class="stack">
+    <h2>Booking your test</h2>
+    <p>
+      You book your test through the official Department of Home Affairs process, as part of your citizenship
+      application. This site does not sell test bookings or offer any paid "guaranteed pass" product — booking
+      always happens directly with the official government service.
+    </p>
+    <a class="btn" href={officialSource.url} rel="noopener noreferrer" target="_blank">
+      Visit the Department of Home Affairs →
+    </a>
+  </section>
+
+  {
+    regionalVariants && regionalVariants.length > 0 && (
+      <section class="stack">
+        <h2>Regional variations</h2>
+        <p>The same test applies across {regionalVariants.join(", ")}.</p>
+      </section>
+    )
+  }
+
+  <section class="stack">
+    <h2>How to prepare</h2>
+    <ol>
+      <li>
+        Read the official resource booklet, <em>{officialSource.handbookName}</em>.
+      </li>
+      <li>
+        <a href="/categories">Work through practice questions by category</a> on this site, reading the
+        explanation after each one — pay particular attention to the Australian Values category.
+      </li>
+      <li>
+        Once you feel ready, <a href="/mock-exam">take a full timed mock exam</a> to simulate the real
+        experience, including the Australian Values pass rule.
+      </li>
+    </ol>
+  </section>
+</BaseLayout>
