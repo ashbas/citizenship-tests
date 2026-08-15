@@ -1,0 +1,43 @@
+---
+import "@citizenship-tests/ui-components/styles/base.css";
+import Header from "@citizenship-tests/ui-components/Header.astro";
+import Footer from "@citizenship-tests/ui-components/Footer.astro";
+import CookieConsentBanner from "@citizenship-tests/ui-components/CookieConsentBanner.astro";
+import type { PageMeta } from "@citizenship-tests/seo-utils";
+
+export interface Props {
+  siteName: string;
+  disclaimer: string;
+  meta: PageMeta;
+  currentPath?: string;
+  structuredData?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const { siteName, disclaimer, meta, currentPath, structuredData } = Astro.props;
+const jsonLdBlocks = Array.isArray(structuredData)
+  ? structuredData
+  : structuredData
+    ? [structuredData]
+    : [];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{meta.title}</title>
+    <meta name="description" content={meta.description} />
+    <link rel="canonical" href={meta.canonicalUrl} />
+    <meta name="robots" content="index, follow" />
+    {jsonLdBlocks.map((block) => <script type="application/ld+json" set:html={JSON.stringify(block)} />)}
+  </head>
+  <body>
+    <Header siteName={siteName} currentPath={currentPath} />
+    <main id="main-content" class="container">
+      <slot />
+    </main>
+    <Footer siteName={siteName} disclaimer={disclaimer} />
+    <CookieConsentBanner />
+  </body>
+</html>

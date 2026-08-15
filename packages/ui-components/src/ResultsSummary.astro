@@ -1,0 +1,57 @@
+---
+// Static skeleton for the results headline. Scores are only known once the
+// visitor has taken the exam client-side (fully static site, no server),
+// so this renders empty/placeholder state at build time and the results
+// controller (site-generator/src/client/results.ts) fills in text content
+// and toggles the relevant classes/visibility after reading the stored
+// exam session. Keeping the markup + styling here (rather than generating
+// it from a JS template string) means the visual design lives in one place.
+---
+
+<section class="results-summary card" data-results-summary hidden>
+  <p class="results-summary__badge">
+    <span class="badge" data-results-pass-badge>—</span>
+  </p>
+  <p class="results-summary__score">
+    <span data-results-score>0</span> / <span data-results-total>0</span> correct
+    (<span data-results-percent>0</span>%)
+  </p>
+  <p class="muted" data-results-pass-mark></p>
+
+  <div class="results-summary__subset card" data-results-subset hidden>
+    <p class="results-summary__subset-headline" data-results-subset-headline></p>
+    <p class="muted" data-results-subset-detail></p>
+  </div>
+</section>
+
+<section class="results-summary card" data-results-empty hidden>
+  <p>We couldn't find a completed exam session.</p>
+  <a class="btn" href="/mock-exam">Take the mock exam →</a>
+</section>
+
+<style>
+  .results-summary {
+    text-align: center;
+  }
+  .results-summary__badge .badge {
+    font-size: 1rem;
+    padding: 0.4rem 1.1rem;
+  }
+  .results-summary__score {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0.75rem 0 0.25rem;
+  }
+  .results-summary__subset {
+    margin-top: 1.25rem;
+    text-align: left;
+    border-left: 4px solid var(--color-danger);
+  }
+  .results-summary__subset[data-passed="true"] {
+    border-left-color: var(--color-success);
+  }
+  .results-summary__subset-headline {
+    font-weight: 700;
+    margin: 0 0 0.3rem;
+  }
+</style>

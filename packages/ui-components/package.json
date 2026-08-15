@@ -1,0 +1,25 @@
+{
+  "name": "@citizenship-tests/ui-components",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    "./Header.astro": "./src/Header.astro",
+    "./Footer.astro": "./src/Footer.astro",
+    "./QuestionCard.astro": "./src/QuestionCard.astro",
+    "./ResultsSummary.astro": "./src/ResultsSummary.astro",
+    "./CategoryNav.astro": "./src/CategoryNav.astro",
+    "./ProgressIndicator.astro": "./src/ProgressIndicator.astro",
+    "./AudioPlayer.astro": "./src/AudioPlayer.astro",
+    "./OfficialSourceCallout.astro": "./src/OfficialSourceCallout.astro",
+    "./CookieConsentBanner.astro": "./src/CookieConsentBanner.astro",
+    "./AdSlot.astro": "./src/AdSlot.astro",
+    "./styles/base.css": "./src/styles/base.css"
+  },
+  "peerDependencies": {
+    "astro": "^5.0.0 || ^7.0.0"
+  },
+  "dependencies": {
+    "@citizenship-tests/quiz-engine": "workspace:*"
+  }
+}

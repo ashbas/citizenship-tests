@@ -1,0 +1,44 @@
+[
+  {
+    "slug": "values-and-principles",
+    "name": "Values and Principles of the UK",
+    "description": "The fundamental values underpinning British society and what they mean in practice.",
+    "sourceChapter": "Chapter 1: The Values and Principles of the UK"
+  },
+  {
+    "slug": "what-is-the-uk",
+    "name": "What is the UK?",
+    "description": "The nations, geography, and symbols that make up the United Kingdom.",
+    "sourceChapter": "Chapter 2: What is the UK?"
+  },
+  {
+    "slug": "early-britain",
+    "name": "Early Britain",
+    "description": "Roman Britain, Anglo-Saxon settlement, the Viking age, and the medieval period.",
+    "sourceChapter": "Chapter 3: A Long and Illustrious History (Early Britain)"
+  },
+  {
+    "slug": "tudors-and-stuarts",
+    "name": "The Tudors, Stuarts and Empire",
+    "description": "The Reformation, the Civil War, the Restoration, and the growth of the British Empire.",
+    "sourceChapter": "Chapter 3: A Long and Illustrious History (Tudors, Stuarts and Empire)"
+  },
+  {
+    "slug": "industry-and-world-wars",
+    "name": "Industry, Empire and the World Wars",
+    "description": "The Industrial Revolution, the fight for the vote, and the two World Wars.",
+    "sourceChapter": "Chapter 3: A Long and Illustrious History (Industry and the 20th Century)"
+  },
+  {
+    "slug": "modern-thriving-society",
+    "name": "A Modern, Thriving Society",
+    "description": "Population, faith and religious observance, customs, sport, and the arts in the UK today.",
+    "sourceChapter": "Chapter 4: A Modern, Thriving Society"
+  },
+  {
+    "slug": "government-law-and-your-role",
+    "name": "Government, Law and Your Role",
+    "description": "How the UK is governed, the justice system, and how residents can get involved in their community.",
+    "sourceChapter": "Chapter 5: The UK Government, the Law and Your Role"
+  }
+]

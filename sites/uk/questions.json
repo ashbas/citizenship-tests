@@ -1,0 +1,632 @@
+[
+  {
+    "id": "uk-001",
+    "categorySlug": "values-and-principles",
+    "question": "Which of these is one of the fundamental principles of British life listed in the Life in the UK handbook?",
+    "options": [
+      "The rule of law",
+      "Central economic planning",
+      "One-party rule",
+      "A single state-mandated religion"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "The handbook sets out five fundamental principles of British life: democracy, the rule of law, individual liberty, tolerance of those with different faiths and beliefs, and participation in community life.",
+    "sourceReference": "Chapter 1: The Values and Principles of the UK",
+    "audioFile": "/audio/uk/uk-001.mp3"
+  },
+  {
+    "id": "uk-002",
+    "categorySlug": "values-and-principles",
+    "question": "What does \"the rule of law\" mean in the context of the UK's values?",
+    "options": [
+      "Only ordinary citizens must obey the law",
+      "Everyone, including the government, is subject to and accountable under the law",
+      "Judges may change the law however they see fit",
+      "The police can act outside their legal authority during emergencies"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "The rule of law means no one is above the law, including politicians, officials, and the monarch. Laws are applied equally and enforced through an independent judiciary.",
+    "sourceReference": "Chapter 1: The Values and Principles of the UK",
+    "audioFile": "/audio/uk/uk-002.mp3"
+  },
+  {
+    "id": "uk-003",
+    "categorySlug": "values-and-principles",
+    "question": "Which historical document is widely credited with first establishing that even the monarch is subject to the law?",
+    "options": [
+      "The Human Rights Act 1998",
+      "The Treaty of Union",
+      "Magna Carta",
+      "The Reform Act 1832"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Magna Carta, agreed by King John in 1215, is often cited as an early step toward the idea that the monarch's power is limited by law — a principle that underpins the modern rule of law.",
+    "sourceReference": "Chapter 1: The Values and Principles of the UK",
+    "audioFile": "/audio/uk/uk-003.mp3"
+  },
+  {
+    "id": "uk-004",
+    "categorySlug": "values-and-principles",
+    "question": "\"Participation in community life\" is one of the UK's core values. Which of these is an example of this in practice?",
+    "options": [
+      "Avoiding all contact with neighbours",
+      "Refusing to pay any taxes",
+      "Ignoring decisions made by the local council",
+      "Voting in elections and volunteering locally"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "The handbook encourages residents to get involved in their communities — through voting, volunteering, joining local groups, or attending public meetings — as a practical expression of this value.",
+    "sourceReference": "Chapter 1: The Values and Principles of the UK",
+    "audioFile": "/audio/uk/uk-004.mp3"
+  },
+  {
+    "id": "uk-005",
+    "categorySlug": "values-and-principles",
+    "question": "What does \"tolerance of those with different faiths and beliefs\" mean in practice in the UK?",
+    "options": [
+      "People are free to practise any religion, or none at all, without persecution",
+      "Only the historic state religion may be practised",
+      "Religious belief is discouraged in public life",
+      "All residents must eventually adopt the same beliefs"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Freedom of religion and belief is protected in the UK, and people of all faiths — and of no faith — are expected to be able to live without fear of persecution for their beliefs.",
+    "sourceReference": "Chapter 1: The Values and Principles of the UK",
+    "audioFile": "/audio/uk/uk-005.mp3"
+  },
+  {
+    "id": "uk-006",
+    "categorySlug": "values-and-principles",
+    "question": "Which of these best describes \"individual liberty\" as a UK value?",
+    "options": [
+      "Freedom from all legal obligations",
+      "The freedom to live your life as you choose, within the law",
+      "The right to ignore court rulings you disagree with",
+      "A freedom that only applies to British-born citizens"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Individual liberty means people are free to make their own choices about their lives — work, beliefs, relationships, and more — as long as those choices don't break the law or harm others.",
+    "sourceReference": "Chapter 1: The Values and Principles of the UK",
+    "audioFile": "/audio/uk/uk-006.mp3"
+  },
+  {
+    "id": "uk-007",
+    "categorySlug": "what-is-the-uk",
+    "question": "How many nations make up the United Kingdom?",
+    "options": [
+      "Three",
+      "Five",
+      "Four",
+      "Two"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "The United Kingdom is made up of four nations: England, Scotland, Wales, and Northern Ireland.",
+    "sourceReference": "Chapter 2: What is the UK?",
+    "audioFile": "/audio/uk/uk-007.mp3"
+  },
+  {
+    "id": "uk-008",
+    "categorySlug": "what-is-the-uk",
+    "question": "Which of these is NOT part of the United Kingdom?",
+    "options": [
+      "Northern Ireland",
+      "Scotland",
+      "Wales",
+      "The Republic of Ireland"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "The Republic of Ireland is a separate, independent country. Northern Ireland, which shares the island of Ireland with the Republic, is part of the UK.",
+    "sourceReference": "Chapter 2: What is the UK?",
+    "audioFile": "/audio/uk/uk-008.mp3"
+  },
+  {
+    "id": "uk-009",
+    "categorySlug": "what-is-the-uk",
+    "question": "What is the capital city of Scotland?",
+    "options": [
+      "Edinburgh",
+      "Glasgow",
+      "Aberdeen",
+      "Dundee"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Edinburgh is Scotland's capital and the seat of the Scottish Parliament. Glasgow is Scotland's largest city, but not its capital.",
+    "sourceReference": "Chapter 2: What is the UK?",
+    "audioFile": "/audio/uk/uk-009.mp3"
+  },
+  {
+    "id": "uk-010",
+    "categorySlug": "what-is-the-uk",
+    "question": "What is the capital city of Wales?",
+    "options": [
+      "Swansea",
+      "Cardiff",
+      "Newport",
+      "Bangor"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Cardiff has been the capital of Wales since 1955 and is home to the Senedd, the Welsh Parliament.",
+    "sourceReference": "Chapter 2: What is the UK?",
+    "audioFile": "/audio/uk/uk-010.mp3"
+  },
+  {
+    "id": "uk-011",
+    "categorySlug": "what-is-the-uk",
+    "question": "What is the capital city of Northern Ireland?",
+    "options": [
+      "Derry/Londonderry",
+      "Armagh",
+      "Belfast",
+      "Lisburn"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Belfast is the capital and largest city of Northern Ireland, and the seat of the Northern Ireland Assembly.",
+    "sourceReference": "Chapter 2: What is the UK?",
+    "audioFile": "/audio/uk/uk-011.mp3"
+  },
+  {
+    "id": "uk-012",
+    "categorySlug": "what-is-the-uk",
+    "question": "The Union Flag combines crosses associated with which patron saints?",
+    "options": [
+      "St George, St David, and St Andrew",
+      "St Patrick, St David, and St Columba",
+      "St Andrew, St David, and St Cuthbert",
+      "St George, St Andrew, and St Patrick"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "The Union Flag overlays the crosses of St George (England), St Andrew (Scotland), and St Patrick (Ireland). Wales's patron saint, St David, is not represented, since Wales was already united with England when the flag was created.",
+    "sourceReference": "Chapter 2: What is the UK?",
+    "audioFile": "/audio/uk/uk-012.mp3"
+  },
+  {
+    "id": "uk-013",
+    "categorySlug": "early-britain",
+    "question": "Which Roman emperor led the successful invasion of Britain in AD 43?",
+    "options": [
+      "Claudius",
+      "Julius Caesar",
+      "Hadrian",
+      "Nero"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Emperor Claudius launched the invasion that brought much of Britain under Roman rule, nearly a century after Julius Caesar's earlier expeditions in 55 and 54 BC, which did not lead to permanent occupation.",
+    "sourceReference": "Chapter 3: A Long and Illustrious History (Early Britain)",
+    "audioFile": "/audio/uk/uk-013.mp3"
+  },
+  {
+    "id": "uk-014",
+    "categorySlug": "early-britain",
+    "question": "What structure did the Romans build to mark the northern frontier of their province in Britain?",
+    "options": [
+      "Offa's Dyke",
+      "Hadrian's Wall",
+      "Stonehenge",
+      "The Tower of London"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Hadrian's Wall, begun around AD 122 on the orders of Emperor Hadrian, ran coast to coast in the north of England and marked the edge of Roman control.",
+    "sourceReference": "Chapter 3: A Long and Illustrious History (Early Britain)",
+    "audioFile": "/audio/uk/uk-014.mp3"
+  },
+  {
+    "id": "uk-015",
+    "categorySlug": "early-britain",
+    "question": "Which people settled in Britain after the Romans left, eventually giving England its name?",
+    "options": [
+      "The Normans",
+      "The Vikings",
+      "The Anglo-Saxons",
+      "The Romans"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Anglo-Saxon settlers arrived from continental Europe from the 5th century onward. \"England\" derives from \"Angle-land\", named after one of these settling groups.",
+    "sourceReference": "Chapter 3: A Long and Illustrious History (Early Britain)",
+    "audioFile": "/audio/uk/uk-015.mp3"
+  },
+  {
+    "id": "uk-016",
+    "categorySlug": "early-britain",
+    "question": "In what year did the Norman Conquest of England take place?",
+    "options": [
+      "1086",
+      "1215",
+      "1042",
+      "1066"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "William, Duke of Normandy, defeated King Harold II at the Battle of Hastings in 1066 and was crowned King of England later that year.",
+    "sourceReference": "Chapter 3: A Long and Illustrious History (Early Britain)",
+    "audioFile": "/audio/uk/uk-016.mp3"
+  },
+  {
+    "id": "uk-017",
+    "categorySlug": "early-britain",
+    "question": "The Battle of Hastings in 1066 was fought between King Harold II and which rival for the English throne?",
+    "options": [
+      "William, Duke of Normandy",
+      "Edward the Confessor",
+      "Harald Hardrada of Norway alone",
+      "Richard the Lionheart"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "William of Normandy defeated Harold at Hastings, becoming King William I — \"William the Conqueror.\" Harold had also just defeated a separate invasion by Harald Hardrada of Norway weeks earlier at Stamford Bridge.",
+    "sourceReference": "Chapter 3: A Long and Illustrious History (Early Britain)",
+    "audioFile": "/audio/uk/uk-017.mp3"
+  },
+  {
+    "id": "uk-018",
+    "categorySlug": "early-britain",
+    "question": "What was the Domesday Book?",
+    "options": [
+      "A religious text banned by the medieval Church",
+      "A survey of land and property ownership across England, ordered by William the Conqueror",
+      "A peace treaty ending Viking raids on England",
+      "A code of Anglo-Saxon criminal law"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Completed in 1086, the Domesday Book recorded landholdings and resources across much of England, largely for taxation purposes, and remains a key historical record.",
+    "sourceReference": "Chapter 3: A Long and Illustrious History (Early Britain)",
+    "audioFile": "/audio/uk/uk-018.mp3"
+  },
+  {
+    "id": "uk-019",
+    "categorySlug": "tudors-and-stuarts",
+    "question": "Which King of England broke from the Roman Catholic Church in the 1530s?",
+    "options": [
+      "Henry VII",
+      "Edward VI",
+      "Henry VIII",
+      "James I"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Henry VIII broke from Rome after the Pope refused to annul his marriage to Catherine of Aragon, leading to the establishment of the Church of England with the monarch as its head.",
+    "sourceReference": "Chapter 3: A Long and Illustrious History (Tudors, Stuarts and Empire)",
+    "audioFile": "/audio/uk/uk-019.mp3"
+  },
+  {
+    "id": "uk-020",
+    "categorySlug": "tudors-and-stuarts",
+    "question": "Which queen, one of Henry VIII's children, became known as \"the Virgin Queen\" and ruled during a period of English cultural flourishing?",
+    "options": [
+      "Mary I",
+      "Mary, Queen of Scots",
+      "Anne Boleyn",
+      "Elizabeth I"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "Elizabeth I reigned from 1558 to 1603, a period associated with figures like William Shakespeare and English naval expansion, and never married.",
+    "sourceReference": "Chapter 3: A Long and Illustrious History (Tudors, Stuarts and Empire)",
+    "audioFile": "/audio/uk/uk-020.mp3"
+  },
+  {
+    "id": "uk-021",
+    "categorySlug": "tudors-and-stuarts",
+    "question": "The Spanish Armada was defeated in 1588 during whose reign?",
+    "options": [
+      "Elizabeth I",
+      "Henry VIII",
+      "James I",
+      "Charles I"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "England's defeat of the Spanish Armada in 1588, aided heavily by storms, took place under Elizabeth I and is remembered as a defining moment of her reign.",
+    "sourceReference": "Chapter 3: A Long and Illustrious History (Tudors, Stuarts and Empire)",
+    "audioFile": "/audio/uk/uk-021.mp3"
+  },
+  {
+    "id": "uk-022",
+    "categorySlug": "tudors-and-stuarts",
+    "question": "The English Civil War (1642–1651) was fought primarily between which two sides?",
+    "options": [
+      "England and Scotland",
+      "Supporters of King Charles I and supporters of Parliament",
+      "Catholics and the Spanish crown",
+      "Wales and England"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "The conflict pitted Royalists, loyal to Charles I, against Parliamentarians who wanted to limit royal power. It ended with Charles I's execution in 1649.",
+    "sourceReference": "Chapter 3: A Long and Illustrious History (Tudors, Stuarts and Empire)",
+    "audioFile": "/audio/uk/uk-022.mp3"
+  },
+  {
+    "id": "uk-023",
+    "categorySlug": "tudors-and-stuarts",
+    "question": "Who led the Parliamentarian side in the Civil War and later ruled as Lord Protector?",
+    "options": [
+      "Charles II",
+      "William of Orange",
+      "Oliver Cromwell",
+      "Guy Fawkes"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Oliver Cromwell led Parliamentarian forces to victory and governed as Lord Protector during the republican period known as the Commonwealth, before the monarchy was restored in 1660.",
+    "sourceReference": "Chapter 3: A Long and Illustrious History (Tudors, Stuarts and Empire)",
+    "audioFile": "/audio/uk/uk-023.mp3"
+  },
+  {
+    "id": "uk-024",
+    "categorySlug": "tudors-and-stuarts",
+    "question": "The events of 1688–89, in which William of Orange and Mary became joint monarchs, are known as what?",
+    "options": [
+      "The Restoration",
+      "The Act of Union",
+      "The Gunpowder Plot",
+      "The Glorious Revolution"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "The Glorious Revolution saw James II replaced by William and Mary, and led to the Bill of Rights 1689, which limited royal power and strengthened Parliament.",
+    "sourceReference": "Chapter 3: A Long and Illustrious History (Tudors, Stuarts and Empire)",
+    "audioFile": "/audio/uk/uk-024.mp3"
+  },
+  {
+    "id": "uk-025",
+    "categorySlug": "industry-and-world-wars",
+    "question": "The Industrial Revolution, which began in Britain in the 18th century, was driven largely by advances in which areas?",
+    "options": [
+      "Textiles and steam power",
+      "Digital computing",
+      "Aviation",
+      "Nuclear energy"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Innovations such as the steam engine and mechanised textile production transformed Britain from a largely agricultural economy into the world's first industrial nation.",
+    "sourceReference": "Chapter 3: A Long and Illustrious History (Industry and the 20th Century)",
+    "audioFile": "/audio/uk/uk-025.mp3"
+  },
+  {
+    "id": "uk-026",
+    "categorySlug": "industry-and-world-wars",
+    "question": "The Great Reform Act, which extended voting rights and reformed parliamentary seats, was passed in which year?",
+    "options": [
+      "1918",
+      "1832",
+      "1928",
+      "1867"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "The Reform Act 1832 expanded the electorate and redistributed parliamentary seats to reflect population changes brought about by industrialisation, though voting remained limited to a minority of men.",
+    "sourceReference": "Chapter 3: A Long and Illustrious History (Industry and the 20th Century)",
+    "audioFile": "/audio/uk/uk-026.mp3"
+  },
+  {
+    "id": "uk-027",
+    "categorySlug": "industry-and-world-wars",
+    "question": "Which movement campaigned prominently for women's right to vote in the early 20th century, using tactics that included direct action?",
+    "options": [
+      "The Chartists",
+      "The Levellers",
+      "The Suffragettes",
+      "The Luddites"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Led by figures such as Emmeline Pankhurst, the Suffragettes campaigned — sometimes through civil disobedience — for women's voting rights, contributing to the Representation of the People Act 1918.",
+    "sourceReference": "Chapter 3: A Long and Illustrious History (Industry and the 20th Century)",
+    "audioFile": "/audio/uk/uk-027.mp3"
+  },
+  {
+    "id": "uk-028",
+    "categorySlug": "industry-and-world-wars",
+    "question": "In what year did women gain the right to vote on the same terms as men in the UK?",
+    "options": [
+      "1918",
+      "1832",
+      "1945",
+      "1928"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "The Representation of the People Act 1918 first gave some women over 30 the vote. Full equal voting rights for women over 21, matching men, came with the Representation of the People Act 1928.",
+    "sourceReference": "Chapter 3: A Long and Illustrious History (Industry and the 20th Century)",
+    "audioFile": "/audio/uk/uk-028.mp3"
+  },
+  {
+    "id": "uk-029",
+    "categorySlug": "industry-and-world-wars",
+    "question": "Who was UK Prime Minister for most of the Second World War?",
+    "options": [
+      "Winston Churchill",
+      "Neville Chamberlain",
+      "Clement Attlee",
+      "Anthony Eden"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Winston Churchill became Prime Minister in 1940, replacing Neville Chamberlain, and led Britain's wartime government until shortly after victory in Europe in 1945.",
+    "sourceReference": "Chapter 3: A Long and Illustrious History (Industry and the 20th Century)",
+    "audioFile": "/audio/uk/uk-029.mp3"
+  },
+  {
+    "id": "uk-030",
+    "categorySlug": "industry-and-world-wars",
+    "question": "Which major set of social reforms, including the creation of the NHS, followed the Second World War?",
+    "options": [
+      "The Poor Law",
+      "The Welfare State",
+      "The Corn Laws",
+      "The Enclosure Acts"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Clement Attlee's post-war government established the modern Welfare State, including the National Health Service in 1948, providing healthcare free at the point of use.",
+    "sourceReference": "Chapter 3: A Long and Illustrious History (Industry and the 20th Century)",
+    "audioFile": "/audio/uk/uk-030.mp3"
+  },
+  {
+    "id": "uk-031",
+    "categorySlug": "modern-thriving-society",
+    "question": "Approximately how many people live in the UK, according to recent population estimates?",
+    "options": [
+      "Around 30 million",
+      "Around 100 million",
+      "Around 67 million",
+      "Around 45 million"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "The UK's population is estimated at roughly 67 million, with England accounting for the large majority of that total.",
+    "sourceReference": "Chapter 4: A Modern, Thriving Society",
+    "audioFile": "/audio/uk/uk-031.mp3"
+  },
+  {
+    "id": "uk-032",
+    "categorySlug": "modern-thriving-society",
+    "question": "Which of these is a major Christian festival widely celebrated in the UK?",
+    "options": [
+      "Diwali",
+      "Eid al-Fitr",
+      "Vaisakhi",
+      "Christmas"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "Christmas, celebrating the birth of Jesus, is a public holiday and widely observed across the UK, including by many who are not actively religious.",
+    "sourceReference": "Chapter 4: A Modern, Thriving Society",
+    "audioFile": "/audio/uk/uk-032.mp3"
+  },
+  {
+    "id": "uk-033",
+    "categorySlug": "modern-thriving-society",
+    "question": "St Andrew's Day, Scotland's national day, falls on which date?",
+    "options": [
+      "30 November",
+      "1 March",
+      "23 April",
+      "17 March"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "St Andrew's Day is 30 November. The other dates mark the patron saints' days of Wales (St David, 1 March), England (St George, 23 April), and Ireland (St Patrick, 17 March).",
+    "sourceReference": "Chapter 4: A Modern, Thriving Society",
+    "audioFile": "/audio/uk/uk-033.mp3"
+  },
+  {
+    "id": "uk-034",
+    "categorySlug": "modern-thriving-society",
+    "question": "Which sport, with roots in England, has become one of the UK's most significant cultural exports?",
+    "options": [
+      "Baseball",
+      "Football (soccer)",
+      "Ice hockey",
+      "American football"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Modern football's rules were codified in England in 1863, and the sport is now the UK's most popular, followed by huge domestic and international audiences.",
+    "sourceReference": "Chapter 4: A Modern, Thriving Society",
+    "audioFile": "/audio/uk/uk-034.mp3"
+  },
+  {
+    "id": "uk-035",
+    "categorySlug": "modern-thriving-society",
+    "question": "Which world-famous UK museum offers free general admission?",
+    "options": [
+      "The Louvre",
+      "The Smithsonian American Art Museum",
+      "The British Museum",
+      "The Prado"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "The British Museum in London houses a vast collection spanning human history and offers free entry to its permanent collection, a policy shared by many major UK national museums.",
+    "sourceReference": "Chapter 4: A Modern, Thriving Society",
+    "audioFile": "/audio/uk/uk-035.mp3"
+  },
+  {
+    "id": "uk-036",
+    "categorySlug": "modern-thriving-society",
+    "question": "Which of these best describes religious life in the UK today?",
+    "options": [
+      "Only one religion is legally permitted",
+      "Religious practice is banned in public life",
+      "All residents must formally belong to the Church of England",
+      "The UK is religiously diverse, with Christianity the largest faith alongside many others practised freely"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "While Christianity remains the largest religious group, the UK is home to significant Muslim, Hindu, Sikh, Jewish, Buddhist, and non-religious populations, all free to practise (or not practise) as they choose.",
+    "sourceReference": "Chapter 4: A Modern, Thriving Society",
+    "audioFile": "/audio/uk/uk-036.mp3"
+  },
+  {
+    "id": "uk-037",
+    "categorySlug": "government-law-and-your-role",
+    "question": "What is the minimum voting age in UK general elections?",
+    "options": [
+      "18",
+      "16",
+      "21",
+      "25"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "You must be 18 or over to vote in a UK general election, though 16- and 17-year-olds can vote in some devolved elections, such as Scottish Parliament elections.",
+    "sourceReference": "Chapter 5: The UK Government, the Law and Your Role",
+    "audioFile": "/audio/uk/uk-037.mp3"
+  },
+  {
+    "id": "uk-038",
+    "categorySlug": "government-law-and-your-role",
+    "question": "Under current law, what is the maximum interval between UK general elections?",
+    "options": [
+      "4 years",
+      "5 years",
+      "7 years",
+      "3 years"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "A general election must be held at least every 5 years, though a Prime Minister can call one earlier.",
+    "sourceReference": "Chapter 5: The UK Government, the Law and Your Role",
+    "audioFile": "/audio/uk/uk-038.mp3"
+  },
+  {
+    "id": "uk-039",
+    "categorySlug": "government-law-and-your-role",
+    "question": "What is the name of the UK Parliament's lower house, where most MPs sit?",
+    "options": [
+      "The House of Lords",
+      "The Senate",
+      "The House of Commons",
+      "The Privy Council"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "The House of Commons is made up of elected Members of Parliament (MPs) and is the primary law-making chamber. The House of Lords is not directly elected.",
+    "sourceReference": "Chapter 5: The UK Government, the Law and Your Role",
+    "audioFile": "/audio/uk/uk-039.mp3"
+  },
+  {
+    "id": "uk-040",
+    "categorySlug": "government-law-and-your-role",
+    "question": "Who is the Head of State of the United Kingdom?",
+    "options": [
+      "The Prime Minister",
+      "The Speaker of the House of Commons",
+      "The Lord Chancellor",
+      "The reigning monarch"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "The UK is a constitutional monarchy: the monarch is Head of State with largely ceremonial powers, while the Prime Minister, as head of government, exercises day-to-day political power.",
+    "sourceReference": "Chapter 5: The UK Government, the Law and Your Role",
+    "audioFile": "/audio/uk/uk-040.mp3"
+  },
+  {
+    "id": "uk-041",
+    "categorySlug": "government-law-and-your-role",
+    "question": "If you are summoned for jury service in the UK, what is generally true?",
+    "options": [
+      "It is a legal duty most adults on the electoral register can be required to fulfil",
+      "It is entirely optional, with no consequences for refusing",
+      "Only qualified lawyers may serve on a jury",
+      "It only applies to people who are not UK citizens"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Jury service is a civic duty in the UK; those summoned are generally required to attend unless they qualify for a specific exemption or deferral, and non-attendance without good reason can be an offence.",
+    "sourceReference": "Chapter 5: The UK Government, the Law and Your Role",
+    "audioFile": "/audio/uk/uk-041.mp3"
+  },
+  {
+    "id": "uk-042",
+    "categorySlug": "government-law-and-your-role",
+    "question": "Which of these is a common way residents can get involved in their local community, as encouraged in the handbook?",
+    "options": [
+      "Refusing to engage with local government",
+      "Volunteering or joining a local community group",
+      "Avoiding all public meetings",
+      "Declining to vote in local elections"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "The handbook highlights volunteering, joining local groups or councils, and taking part in local democracy as practical ways residents can participate in community life.",
+    "sourceReference": "Chapter 5: The UK Government, the Law and Your Role",
+    "audioFile": "/audio/uk/uk-042.mp3"
+  }
+]

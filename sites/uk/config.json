@@ -1,0 +1,23 @@
+{
+  "countryCode": "GB",
+  "siteName": "Life in the UK Test Practice",
+  "domain": "https://example-uk-domain.com",
+  "officialSource": {
+    "name": "GOV.UK — Life in the UK Test",
+    "url": "https://www.gov.uk/life-in-the-uk-test",
+    "handbookName": "Life in the United Kingdom: A Guide for New Residents (3rd Edition)"
+  },
+  "testFormat": {
+    "totalQuestionsInPool": null,
+    "questionsPerExam": 24,
+    "timeLimitMinutes": 45,
+    "passMarkPercent": 75,
+    "passMarkCorrectCount": 18
+  },
+  "scoringRules": {
+    "type": "standard"
+  },
+  "regionalVariants": ["England", "Scotland", "Wales", "Northern Ireland"],
+  "disclaimer": "This is an independent, unofficial practice resource. It is not affiliated with the UK Home Office or any government body. Always verify against the official GOV.UK source and handbook before your test.",
+  "adsensePublisherId": "pub-0000000000000000"
+}

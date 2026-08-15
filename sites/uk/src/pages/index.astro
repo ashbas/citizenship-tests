@@ -1,0 +1,52 @@
+---
+import BaseLayout from "@citizenship-tests/site-generator/layouts/BaseLayout.astro";
+import { buildMeta } from "@citizenship-tests/seo-utils";
+import { siteData } from "../lib/siteData";
+
+const { config, questions, categories } = siteData;
+
+const meta = buildMeta({
+  siteName: config.siteName,
+  domain: config.domain,
+  path: "/",
+  pageTitle: "Free Life in the UK Test Practice",
+  description: `Practice for the Life in the UK test with ${questions.length} free original questions across ${categories.length} categories, a timed mock exam, and audio playback. No account required.`,
+});
+---
+
+<BaseLayout siteName={config.siteName} disclaimer={config.disclaimer} meta={meta} currentPath="/">
+  <section class="hero stack">
+    <h1>Free Practice for the Life in the UK Test</h1>
+    <p>
+      Study {questions.length} original practice questions across {categories.length} categories, each with a full
+      written explanation — then test yourself with a timed, {config.testFormat.questionsPerExam}-question mock
+      exam modeled on the real thing.
+    </p>
+    <div class="hero__actions">
+      <a class="btn" href="/mock-exam">Take a Mock Exam</a>
+      <a class="btn btn-secondary" href="/categories">Study by Category</a>
+    </div>
+  </section>
+
+  <section class="stack">
+    <h2>Why practice here?</h2>
+    <ul>
+      <li>Every question comes with a written explanation, not just an answer key.</li>
+      <li>Listen to any question read aloud with the built-in audio player.</li>
+      <li>Every question links back to the relevant chapter of the official handbook.</li>
+      <li>No account, no paywall — this site is, and will remain, completely free.</li>
+    </ul>
+    <p>
+      <a href="/how-it-works">Read how the real test works →</a> or
+      <a href="/official-resources">go straight to official GOV.UK resources →</a>.
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero__actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+</style>

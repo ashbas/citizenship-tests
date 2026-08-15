@@ -1,0 +1,17 @@
+{
+  "name": "citizenship-tests-monorepo",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Monorepo for free, AdSense-monetized citizenship/civics test practice sites.",
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "scripts": {
+    "build:uk": "pnpm --filter @citizenship-tests/site-uk build",
+    "dev:uk": "pnpm --filter @citizenship-tests/site-uk dev",
+    "build:all": "bash tools/build-all.sh",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "lint": "pnpm -r --if-present lint"
+  }
+}

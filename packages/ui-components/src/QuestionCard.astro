@@ -1,0 +1,198 @@
+---
+import type { Question } from "@citizenship-tests/quiz-engine";
+import AudioPlayer from "./AudioPlayer.astro";
+
+export interface Props {
+  question: Question;
+  mode?: "practice" | "exam";
+  questionNumber?: number;
+  categoryHref?: string;
+}
+
+const { question, mode = "practice", questionNumber, categoryHref } = Astro.props;
+const isPractice = mode === "practice";
+---
+
+<div
+  class="question-card"
+  data-question-card
+  data-mode={mode}
+  data-question-id={question.id}
+  data-correct-index={question.correctAnswerIndex}
+>
+  <div class="question-card__head">
+    {questionNumber !== undefined && <span class="question-card__number">Q{questionNumber}</span>}
+    <p class="question-card__text">{question.question}</p>
+  </div>
+
+  <div class="question-card__options" role={isPractice ? "group" : "radiogroup"} aria-label="Answer options">
+    {
+      question.options.map((option, index) => (
+        <button
+          type="button"
+          class="option-btn"
+          data-option-index={index}
+          aria-pressed="false"
+        >
+          <span class="option-btn__marker" aria-hidden="true" />
+          <span>{option}</span>
+        </button>
+      ))
+    }
+  </div>
+
+  {
+    isPractice && (
+      <div class="question-card__feedback" data-feedback hidden>
+        <p class="question-card__result" data-result-text />
+        <p class="question-card__explanation">{question.explanation}</p>
+        <p class="muted question-card__source">
+          Source: {question.sourceReference}
+          {categoryHref && (
+            <>
+              {" "}
+              &middot; <a href={categoryHref}>Back to category</a>
+            </>
+          )}
+        </p>
+      </div>
+    )
+  }
+
+  <div class="question-card__audio">
+    <AudioPlayer src={question.audioFile} label="Listen to this question" />
+  </div>
+</div>
+
+<style>
+  .question-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+  }
+  .question-card__head {
+    display: flex;
+    gap: 0.6rem;
+    align-items: baseline;
+    margin-bottom: 0.9rem;
+  }
+  .question-card__number {
+    font-weight: 700;
+    color: var(--color-primary);
+    flex-shrink: 0;
+  }
+  .question-card__text {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.05rem;
+  }
+  .question-card__options {
+    display: grid;
+    gap: 0.5rem;
+  }
+  .option-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-align: left;
+    width: 100%;
+    padding: 0.65rem 0.9rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background: var(--color-bg);
+    cursor: pointer;
+    font: inherit;
+    color: var(--color-text);
+  }
+  .option-btn:hover {
+    border-color: var(--color-primary);
+  }
+  .option-btn__marker {
+    width: 0.85rem;
+    height: 0.85rem;
+    border-radius: 999px;
+    border: 2px solid var(--color-border);
+    flex-shrink: 0;
+  }
+  .option-btn[aria-pressed="true"] .option-btn__marker {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+  .option-btn.is-correct {
+    border-color: var(--color-success);
+    background: var(--color-success-bg);
+  }
+  .option-btn.is-incorrect {
+    border-color: var(--color-danger);
+    background: var(--color-danger-bg);
+  }
+  .question-card__feedback {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--color-border);
+  }
+  .question-card__result {
+    font-weight: 700;
+    margin: 0 0 0.4rem;
+  }
+  .question-card__explanation {
+    margin: 0 0 0.5rem;
+  }
+  .question-card__source {
+    margin: 0;
+    font-size: 0.85rem;
+  }
+  .question-card__audio {
+    margin-top: 0.9rem;
+  }
+</style>
+
+<script>
+  // Progressive enhancement: practice-mode cards reveal correctness +
+  // explanation on click. Exam-mode cards just record a selection (the
+  // mock-exam page script owns scoring/state). This script is identical
+  // across every QuestionCard instance, so Astro bundles it once per page
+  // regardless of how many cards are rendered.
+  function initQuestionCard(card: HTMLElement) {
+    const mode = card.dataset.mode;
+    const correctIndex = Number(card.dataset.correctIndex);
+    const buttons = Array.from(card.querySelectorAll<HTMLButtonElement>(".option-btn"));
+    const feedback = card.querySelector<HTMLElement>("[data-feedback]");
+    const resultText = card.querySelector<HTMLElement>("[data-result-text]");
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const selectedIndex = Number(btn.dataset.optionIndex);
+
+        buttons.forEach((b) => b.setAttribute("aria-pressed", "false"));
+        btn.setAttribute("aria-pressed", "true");
+
+        card.dispatchEvent(
+          new CustomEvent("question-answered", {
+            bubbles: true,
+            detail: { questionId: card.dataset.questionId, selectedIndex },
+          })
+        );
+
+        if (mode !== "practice") return;
+
+        const isCorrect = selectedIndex === correctIndex;
+        buttons.forEach((b, i) => {
+          b.classList.toggle("is-correct", i === correctIndex);
+          b.classList.toggle("is-incorrect", i === selectedIndex && !isCorrect);
+          b.disabled = true;
+        });
+
+        if (feedback) feedback.hidden = false;
+        if (resultText) {
+          resultText.textContent = isCorrect
+            ? "Correct!"
+            : `Not quite — the correct answer is: ${buttons[correctIndex]?.textContent?.trim()}`;
+        }
+      });
+    });
+  }
+
+  document.querySelectorAll<HTMLElement>("[data-question-card]").forEach(initQuestionCard);
+</script>

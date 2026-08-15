@@ -1,0 +1,73 @@
+---
+import BaseLayout from "@citizenship-tests/site-generator/layouts/BaseLayout.astro";
+import { buildMeta } from "@citizenship-tests/seo-utils";
+import { siteData } from "../lib/siteData";
+
+const { config } = siteData;
+const { testFormat, officialSource, regionalVariants } = config;
+
+const meta = buildMeta({
+  siteName: config.siteName,
+  domain: config.domain,
+  path: "/how-it-works",
+  pageTitle: "How the Life in the UK Test Works",
+  description: `Format, timing, pass mark, and booking information for the real Life in the UK test — ${testFormat.questionsPerExam} questions, ${testFormat.timeLimitMinutes} minutes, ${testFormat.passMarkPercent}% pass mark.`,
+});
+---
+
+<BaseLayout siteName={config.siteName} disclaimer={config.disclaimer} meta={meta} currentPath="/how-it-works">
+  <h1>How the Life in the UK Test Works</h1>
+
+  <section class="stack">
+    <h2>Format</h2>
+    <ul>
+      <li>{testFormat.questionsPerExam} multiple-choice questions, drawn from the official handbook.</li>
+      <li>You have {testFormat.timeLimitMinutes} minutes to complete the test.</li>
+      <li>
+        You need at least {testFormat.passMarkCorrectCount} correct answers ({testFormat.passMarkPercent}%) to
+        pass.
+      </li>
+      <li>The test is taken on a computer at an approved test centre — it is not available online or by post.</li>
+    </ul>
+  </section>
+
+  <section class="stack">
+    <h2>Booking your test</h2>
+    <p>
+      You book and pay for your test through the official GOV.UK service. This site does not sell test bookings
+      or offer any paid "guaranteed pass" product — booking always happens directly with the official government
+      service.
+    </p>
+    <a class="btn" href={officialSource.url} rel="noopener noreferrer" target="_blank">Book on GOV.UK →</a>
+  </section>
+
+  {
+    regionalVariants && regionalVariants.length > 0 && (
+      <section class="stack">
+        <h2>Does it matter where in the UK I live?</h2>
+        <p>
+          The same test and handbook apply UK-wide, covering {regionalVariants.join(", ")}. Some questions do
+          cover nation-specific facts (for example, devolved administrations), so it's worth studying material
+          from across all four nations, not just your own.
+        </p>
+      </section>
+    )
+  }
+
+  <section class="stack">
+    <h2>How to prepare</h2>
+    <ol>
+      <li>
+        Read the official handbook, <em>{officialSource.handbookName}</em>.
+      </li>
+      <li>
+        <a href="/categories">Work through practice questions by category</a> on this site, reading the
+        explanation after each one.
+      </li>
+      <li>
+        Once you feel ready, <a href="/mock-exam">take a full timed mock exam</a> to simulate the real
+        experience.
+      </li>
+    </ol>
+  </section>
+</BaseLayout>

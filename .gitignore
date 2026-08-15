@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.astro/
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example
+
+# Generated audio output and its cache manifest are build artifacts, not source
+sites/*/public/audio/
+sites/*/.audio-manifest.json
