@@ -33,17 +33,20 @@ const clientPayload = {
   <h1>Your Results</h1>
 
   <ResultsSummary />
-  <AdSlot slot="results" />
 
-  <section data-results-weak-categories hidden>
-    <h2>Topics to review</h2>
-    <ul data-results-weak-list></ul>
-  </section>
+  <div data-results-content hidden>
+    <AdSlot slot="results" />
 
-  <section>
-    <h2>Full Answer Review</h2>
-    <ol class="stack results-review-list" data-results-review></ol>
-  </section>
+    <section data-results-weak-categories hidden>
+      <h2>Topics to review</h2>
+      <ul data-results-weak-list></ul>
+    </section>
+
+    <section>
+      <h2>Full Answer Review</h2>
+      <ol class="stack results-review-list" data-results-review></ol>
+    </section>
+  </div>
 
   <p><a href={withBase("/mock-exam")} class="btn btn-secondary">Take another mock exam</a></p>
 
