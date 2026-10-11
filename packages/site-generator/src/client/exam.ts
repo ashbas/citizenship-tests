@@ -9,6 +9,7 @@ import {
   type TestFormat,
 } from "@citizenship-tests/quiz-engine";
 import { renderExamQuestion } from "./renderQuestion.js";
+import { withBase } from "@citizenship-tests/ui-components/base";
 
 export const EXAM_RESULT_STORAGE_KEY = "citizenship-test:last-exam-result";
 
@@ -66,7 +67,7 @@ export function initMockExam(): void {
       timedOut,
     };
     sessionStorage.setItem(EXAM_RESULT_STORAGE_KEY, JSON.stringify(result));
-    window.location.href = "/results";
+    window.location.href = withBase("/results");
   };
 
   const updateTimer = () => {

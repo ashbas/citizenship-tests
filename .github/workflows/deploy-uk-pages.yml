@@ -1,0 +1,71 @@
+name: Deploy UK site to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "sites/uk/**"
+      - "packages/**"
+      - "pnpm-lock.yaml"
+      - "pnpm-workspace.yaml"
+      - ".github/workflows/deploy-uk-pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one Pages deployment at a time; let in-flight deploys finish rather
+# than cancelling them mid-way.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      # Installs from the workspace root so internal "workspace:*" deps
+      # (@citizenship-tests/quiz-engine etc.) resolve correctly — running
+      # install from sites/uk alone would not see the pnpm workspace.
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build UK site
+        run: pnpm --filter @citizenship-tests/site-uk build
+        env:
+          # Tells sites/uk/astro.config.mjs to build with base: "/citizenship-tests"
+          # instead of "/", since GitHub Pages project sites serve from a
+          # subpath, not the domain root.
+          GITHUB_PAGES: "true"
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: sites/uk/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

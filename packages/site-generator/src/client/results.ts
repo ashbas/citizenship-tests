@@ -8,6 +8,7 @@ import {
 } from "@citizenship-tests/quiz-engine";
 import { renderReviewQuestion } from "./renderQuestion.js";
 import { EXAM_RESULT_STORAGE_KEY, type StoredExamResult } from "./exam.js";
+import { withBase } from "@citizenship-tests/ui-components/base";
 
 interface ResultsPayload {
   questions: Question[];
@@ -20,7 +21,8 @@ export function initResults(): void {
   const dataEl = document.getElementById("results-data");
   const summaryEl = document.querySelector<HTMLElement>("[data-results-summary]");
   const emptyEl = document.querySelector<HTMLElement>("[data-results-empty]");
-  if (!dataEl || !summaryEl || !emptyEl) return;
+  const contentEl = document.querySelector<HTMLElement>("[data-results-content]");
+  if (!dataEl || !summaryEl || !emptyEl || !contentEl) return;
 
   const stored = sessionStorage.getItem(EXAM_RESULT_STORAGE_KEY);
   if (!stored) {
@@ -43,6 +45,12 @@ export function initResults(): void {
   const score = scoreExam(examQuestions, result.answers, payload.testFormat, payload.scoringRules);
 
   summaryEl.hidden = false;
+  // The ad slot and review sections only render once we actually have
+  // results to show them alongside — never statically, which would put an
+  // ad next to an effectively content-free page for anyone (or any
+  // crawler) landing on /results cold (AdSense policy: no ads on screens
+  // without publisher content).
+  contentEl.hidden = false;
 
   const badge = summaryEl.querySelector<HTMLElement>("[data-results-pass-badge]");
   if (badge) {
@@ -90,7 +98,7 @@ export function initResults(): void {
       if (!category) return;
       const li = document.createElement("li");
       const link = document.createElement("a");
-      link.href = `/categories/${slug}`;
+      link.href = withBase(`/categories/${slug}`);
       link.textContent = `Review ${category.name} questions →`;
       li.appendChild(link);
       weakList.appendChild(li);

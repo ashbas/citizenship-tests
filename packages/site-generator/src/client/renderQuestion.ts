@@ -1,4 +1,5 @@
 import type { Question } from "@citizenship-tests/quiz-engine";
+import { withBase } from "@citizenship-tests/ui-components/base";
 
 /** Builds an <audio> element identical in markup/behavior to ui-components/AudioPlayer.astro. */
 function renderAudio(question: Question): HTMLElement {
@@ -10,7 +11,7 @@ function renderAudio(question: Question): HTMLElement {
   audio.preload = "none";
   audio.setAttribute("aria-label", "Listen to this question");
   const source = document.createElement("source");
-  source.src = question.audioFile;
+  source.src = withBase(question.audioFile);
   audio.appendChild(source);
   wrap.appendChild(audio);
   return wrap;
@@ -132,7 +133,7 @@ export function renderReviewQuestion(
   source.className = "muted question-card__source";
   const sourceLabel = document.createTextNode(`Source: ${question.sourceReference} · `);
   const link = document.createElement("a");
-  link.href = categoryHref;
+  link.href = withBase(categoryHref);
   link.textContent = "Review this category";
   source.append(sourceLabel, link);
 

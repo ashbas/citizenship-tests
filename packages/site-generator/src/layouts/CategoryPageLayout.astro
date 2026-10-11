@@ -4,6 +4,7 @@ import QuestionCard from "@citizenship-tests/ui-components/QuestionCard.astro";
 import AdSlot from "@citizenship-tests/ui-components/AdSlot.astro";
 import { buildMeta, buildFaqPageSchema, buildBreadcrumbSchema } from "@citizenship-tests/seo-utils";
 import { questionsForCategory } from "@citizenship-tests/quiz-engine";
+import { withBase } from "@citizenship-tests/ui-components/base";
 import type { SiteData } from "../data/index.js";
 import type { Category } from "@citizenship-tests/quiz-engine";
 
@@ -42,7 +43,7 @@ const AD_INTERVAL = 6;
   currentPath={`/categories/${category.slug}`}
   structuredData={structuredData}
 >
-  <nav aria-label="Breadcrumb"><a href="/categories">Study by Category</a> / {category.name}</nav>
+  <nav aria-label="Breadcrumb"><a href={withBase("/categories")}>Study by Category</a> / {category.name}</nav>
   <h1>{category.name}</h1>
   <p class="muted">{category.description}</p>
   <p class="muted">Source: {category.sourceChapter}</p>

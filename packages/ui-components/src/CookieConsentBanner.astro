@@ -1,4 +1,6 @@
 ---
+import { withBase } from "./base";
+
 // Custom, lightweight cookie consent banner (Section 10 / open question:
 // build custom vs. third-party script — this repo defaults to custom to
 // avoid a third-party render-blocking dependency; swap for a CMP if a
@@ -9,7 +11,7 @@
   <div class="container cookie-banner__inner">
     <p>
       This site uses cookies, including from Google AdSense, to serve ads. See our
-      <a href="/privacy-policy">Privacy Policy</a> for details.
+      <a href={withBase("/privacy-policy")}>Privacy Policy</a> for details.
     </p>
     <div class="cookie-banner__actions">
       <button type="button" class="btn btn-secondary" data-cookie-reject>Reject non-essential</button>

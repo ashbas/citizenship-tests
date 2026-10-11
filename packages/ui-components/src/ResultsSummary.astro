@@ -1,4 +1,6 @@
 ---
+import { withBase } from "./base";
+
 // Static skeleton for the results headline. Scores are only known once the
 // visitor has taken the exam client-side (fully static site, no server),
 // so this renders empty/placeholder state at build time and the results
@@ -26,7 +28,7 @@
 
 <section class="results-summary card" data-results-empty hidden>
   <p>We couldn't find a completed exam session.</p>
-  <a class="btn" href="/mock-exam">Take the mock exam →</a>
+  <a class="btn" href={withBase("/mock-exam")}>Take the mock exam →</a>
 </section>
 
 <style>

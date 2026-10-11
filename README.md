@@ -140,6 +140,56 @@ same embedded data. Nothing is ever sent off-device. `localStorage`-based
 built in Phase 1 — the current session-storage handoff only survives a
 same-tab navigation, not a closed tab.
 
+## Deploying
+
+Each site is meant to be its own deployable on its own domain — see the
+spec's recommendation of Cloudflare Pages, Netlify, or Vercel, each of
+which lets you point a separate project at this one repo with a different
+"root directory" (`sites/uk`, `sites/australia`, ...) and a different custom
+domain. That's the intended production setup and needs no extra config
+beyond setting each platform's root directory.
+
+### GitHub Pages (UK site only, for quick testing)
+
+`.github/workflows/deploy-uk-pages.yml` builds and deploys the UK site to
+GitHub Pages on every push to `main` that touches `sites/uk`, `/packages`,
+or the lockfile (or on manual dispatch). Two one-time things to know:
+
+1. **Repo settings**: GitHub Pages defaults to "Deploy from a branch",
+   which runs Jekyll over the raw repo — and chokes on `.astro` files,
+   mistaking their frontmatter for Jekyll YAML. In the repo's **Settings →
+   Pages → Build and deployment → Source**, switch it to **"GitHub
+   Actions"**. This is a one-time manual step (deliberately not done via
+   API here, since it changes shared repo settings).
+2. **Only one site can live at a plain GitHub Pages URL per repo.** The
+   workflow builds `sites/uk` specifically; Australia isn't deployed by it.
+   A single repo can't have two separate GitHub Pages projects, so if you
+   want both sites live at once without buying domains yet, use the
+   Cloudflare Pages/Netlify/Vercel route above instead (both point at this
+   one repo, each with its own root directory).
+
+Because a GitHub Pages project site is served under
+`https://<user>.github.io/citizenship-tests/`, not at a domain root, every
+internal link and audio path needs a `/citizenship-tests` prefix in that
+context. This is handled generically, not GitHub-Pages-specifically:
+`packages/ui-components/src/base.ts` exports `withBase(path)`, which reads
+Astro's own `import.meta.env.BASE_URL` and is used everywhere an internal
+`href` or `audioFile` is rendered (nav, footer, category links, the
+mock-exam → results handoff, audio `<source>` tags). `sites/uk/astro.config.mjs`
+only sets `base: "/citizenship-tests"` when the workflow's `GITHUB_PAGES=true`
+env var is set; a normal `pnpm build` (or a Cloudflare Pages/Netlify/Vercel
+build, which won't set that var) still serves from `/` exactly as before —
+verified by rebuilding both ways and diffing the generated `href`s.
+`sites/uk/public/.nojekyll` is also included as a defensive no-op (Actions-based
+Pages deploys don't run Jekyll on the uploaded artifact anyway, but it's
+zero-cost insurance).
+
+`config.domain`, `sitemap.xml`, `robots.txt`, and canonical URLs are
+deliberately **not** repointed at the temporary `github.io` URL — they keep
+reflecting the real intended production domain from `config.json` (still a
+placeholder — see below), since a GitHub Pages test deploy isn't meant to
+be the permanent, indexed home for the site.
+
 ## Adding a new country
 
 ```bash
@@ -214,3 +264,12 @@ Phase 1 and Phase 2:
   once against a throwaway scaffolded site (confirming a fresh scaffold
   builds out of the box and `build-all.sh` skips unimplemented
   placeholders), and once for real to produce the actual Australia site.
+- GitHub Pages base-path handling: built the UK site both with and without
+  `GITHUB_PAGES=true` and diffed the generated `href`/audio `src` values to
+  confirm the default build is byte-identical to before this change (root
+  paths, no prefix) and the Pages build is consistently prefixed. Then
+  served the Pages build from a local static file server under a
+  `/citizenship-tests/` subpath (simulating the real deployment layout) and
+  re-ran the full mock-exam-to-results Playwright flow against it —
+  navigation, exam submission, scoring, and audio `src` resolution all
+  worked correctly under the subpath, with zero console or network errors.

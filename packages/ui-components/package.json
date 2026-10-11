@@ -14,7 +14,8 @@
     "./OfficialSourceCallout.astro": "./src/OfficialSourceCallout.astro",
     "./CookieConsentBanner.astro": "./src/CookieConsentBanner.astro",
     "./AdSlot.astro": "./src/AdSlot.astro",
-    "./styles/base.css": "./src/styles/base.css"
+    "./styles/base.css": "./src/styles/base.css",
+    "./base": "./src/base.ts"
   },
   "peerDependencies": {
     "astro": "^5.0.0 || ^7.0.0"
